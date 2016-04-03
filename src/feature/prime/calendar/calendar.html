@@ -1,0 +1,9 @@
+<template>
+  <span style.bind="style" class="'ui-calendar' ${styleClass}" if.bind="!inline">
+    <input ref="in" type="text" placeholder.bind="placeholder" style.bind="inputStyle"
+    value.bind="value" input.delegate="valueChange($event.target.value)" readonly.bind="readonlyInput"
+    disabled.bind="disabled" mouseenter.trigger="hovered=true" mouseleave.trigger="hovered=false" focus.trigger="focused=true" blur.trigger="focused=false"
+    class="${true ? 'ui-inputfield ui-inputtext ui-widget ui-state-default': ''} ${!showIcon ? 'ui-corner-all':'ui-corner-left'} ${hovered ? 'ui-state-hover':''} ${focused ? 'ui-state-focus':''} ${disabled ? 'ui-state-disabled':''} ${inputStyleClass}">
+    <button type="button" icon="fa-calendar" p-button if.bind="showIcon" click.delegate="onButtonClick($event,in)" class="ui-datepicker-trigger"></button></span>
+    <div if.bind="inline"></div>
+  </template>

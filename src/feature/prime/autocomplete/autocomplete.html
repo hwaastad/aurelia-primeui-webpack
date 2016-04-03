@@ -1,0 +1,27 @@
+<template>
+  <span class="${true ? 'ui-autocomplete ui-widget':''} ${dropdown ? 'ui-autocomplete-dd':''}" style.bind="style" style-class.bind="styleClass">
+    <input if.bind="!multiple" ref="in" p-inputtext type="text" style.bind="inputStyle" style-class.bind="inputStyleClass"
+    value.bind="value ? (field ? resolveFieldData(value)||value : value) : null" input.delegate="onInput($event)" keydown.delegate="onKeydown($event)"
+    placeholder.bind="placeholder" size.bind="size" maxlength.bind="maxlength" readonly.bind="readonly" disabled.bind="disabled">
+    <ul if.bind="multiple" class="ui-autocomplete-multiple ui-widget ui-inputtext ui-state-default ui-corner-all" click.delegate="multiIn.focus()">
+      <li ref="token" repeat.for="val of value" class="ui-autocomplete-token ui-state-highlight ui-corner-all">
+        <span class="ui-autocomplete-token-icon fa fa-fw fa-close" click.delegate="removeItem(token)"></span>
+        <span class="ui-autocomplete-token-label">${val[field]}</span>
+      </li>
+      <li class="ui-autocomplete-input-token">
+        <input ref="multiIn" type="text" p-inputtext input.bind="onInput($event)" keydown.delegate="onKeydown($event)">
+      </li>
+    </ul>
+    <button type="button" p-button icon="fa-fw fa-caret-down" class="ui-autocomplete-dropdown" click.delegate="handleDropdownClick($event)" if.bind="dropdown"></button>
+    <div class="ui-autocomplete-panel ui-widget-content ui-corner-all ui-shadow" css="display: ${panelVisible ? 'block': 'none'}; width: 100%; max-height: ${scrollHeight}">
+      <ul class="ui-autocomplete-items ui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"
+      mouseover.delegate="onItemMouseover($event)" mouseout.delegate="onItemMouseout($event)" click.delegate="onItemClick($event)" if.bind="!itemTemplate">
+      <li class="ui-autocomplete-list-item ui-corner-all" repeat.for="item of suggestions">${field ? item[field] : item}</li>
+    </ul>
+    <ul class="ui-autocomplete-items ui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"
+    mouseover.delegate="onItemMouseover($event)" mouseout.delegate="onItemMouseout($event)" click.delegate="onItemClick($event)" if.bind="itemTemplate">
+    <!--<template ngFor [ngForOf]="suggestions" [ngForTemplate]="itemTemplate"></template>-->
+  </ul>
+</div>
+</span>
+</template>

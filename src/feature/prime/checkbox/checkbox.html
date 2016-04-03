@@ -1,0 +1,11 @@
+<template>
+  <div class="ui-chkbox ui-widget">
+    <div class="ui-helper-hidden-accessible">
+      <input ref="cb" type="checkbox" name.bind="name" value.bind="value" checked.bind="isChecked(cb.value)"/>
+    </div>
+    <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ${(hover && !disabled) ? 'ui-state-hover':''} ${checked ? 'ui-state-active':''} ${disabled ? 'ui-state-disabled':''}" click.delegate="onClick(cb)"
+    mouseover.trigger="hover=true" mouseout.trigger="hover=false">
+    <span class="ui-chkbox-icon ui-c ${checked ? 'fa fa-fw fa-check':''}"></span>
+  </div>
+</div>
+</template>

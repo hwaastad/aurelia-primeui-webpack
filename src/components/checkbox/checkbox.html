@@ -1,0 +1,58 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Checkbox</span>
+      <span class="defaultText dispTable">Checkbox is an extension to standard checkbox element with skinning capabilities.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic</h3>
+    <div class="ui-grid ui-grid-responsive" style="width:250px;margin-bottom:10px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-checkbox name="group1" value="New York" model.two-way="selectedCities"></p-checkbox></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">New York</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-checkbox name="group1" value="San Francisco" model.two-way="selectedCities"></p-checkbox></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">San Francisco</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-checkbox name="group1" value="Los Angeles" model.two-way="selectedCities"></p-checkbox></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Los Angeles</label></div>
+      </div>
+    </div>
+
+    Selected Cities: <span repeat.for="city of selectedCities">${city} &nbsp;&nbsp;</span>
+
+    <h3>Preselection</h3>
+    <div class="ui-grid ui-grid-responsive" style="width:250px;margin-bottom:10px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-checkbox name="group2" value="Technology" model.two-way="selectedCategories"></p-checkbox></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Technology</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-checkbox name="group2" value="Finance" model.two-way="selectedCategories"></p-checkbox></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Finance</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-checkbox name="group2" value="Sports" model.two-way="selectedCategories"></p-checkbox></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Sports</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-checkbox name="group2" value="Entertainment" model.two-way="selectedCategories"></p-checkbox></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Entertainment</label></div>
+      </div>
+    </div>
+
+    Selected Categories: <span repeat.for="cat of selectedCategories">${cat} &nbsp;&nbsp;</span>
+
+    <h3>Boolean</h3>
+    <p-checkbox checked.two-way="checked"></p-checkbox>
+    <br>
+    ${checked}
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

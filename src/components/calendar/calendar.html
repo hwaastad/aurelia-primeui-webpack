@@ -1,0 +1,43 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Calendar</span>
+      <span class="defaultText dispTable">Calendar is an input component to select a date.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic</h3>
+    <p-calendar value.two-way="date1"></p-calendar> &nbsp; ${date1}
+
+    <h3>DateFormat</h3>
+    <p-calendar value.two-way="date2" dateFormat="dd.mm.yy"></p-calendar> &nbsp; ${date2}
+
+    <h3>ShowAnim and Icon</h3>
+    <p-calendar value.two-way="date3" show-anim="slideDown" show-icon.bind="true"></p-calendar> &nbsp; ${date3}
+
+    <h3>ButtonPanel</h3>
+    <p-calendar value.two-way="date4" show-button-panel.bind="true"></p-calendar> &nbsp; ${date4}
+
+    <h3>Navigators</h3>
+    <p-calendar value.two-way="date5" month-navigator.bind="true" year-navigator.bind="true"></p-calendar> &nbsp; ${date5}
+
+    <h3>Multiple Months</h3>
+    <p-calendar value.two-way="date6" number-of-months.bind="3"></p-calendar> &nbsp; ${date6}
+
+    <h3>Show Week and Months</h3>
+    <p-calendar value.two-way="date7" show-week.bind="true" show-other-months.bind="true" select-other-months.bind="true"></p-calendar> &nbsp; ${date7}
+
+    <h3>Restrict</h3>
+    <p-calendar value.two-way="date8" min-date="-1m" max-date="+1m" readonly-input.bind="true"></p-calendar> &nbsp; ${date8}
+
+    <h3>Default Date</h3>
+    <p-calendar value.two-way="date9" default-date="+1m +7d"></p-calendar> &nbsp; ${date9}
+
+    <h3>Inline</h3>
+    <p-calendar value.two-way="date10" inline.bind="true"></p-calendar> &nbsp; ${date10}
+  </div>
+
+  <div class="ContentSideSections Source">
+  </deiv>
+</template>
