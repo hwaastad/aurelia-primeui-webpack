@@ -1,12 +1,11 @@
 <template>
-  <div class="${true ? 'ui-listbox ui-inputfield ui-inputtext ui-widget ui-widget-content ui-corner-all':''} ${disabled ? 'ui-state-disabled':''}" [attr.style]="style" [attr.class]="styleClass">
-    <ul class="ui-listbox-list" if.bind="!itemTemplate" mouseover.delegate="onMouseover($event)" mouseout.delegate="onMouseout($event)" click.delegate="onClick($event)">
-      <li repeat.for="option of options" class="ui-listbox-item ui-corner-all">
-        ${option.label}
+  <div class="${true ? 'ui-listbox ui-inputfield ui-inputtext ui-widget ui-widget-content ui-corner-all':''} ${disabled ? 'ui-state-disabled':''} ${styleClass}" style.bind="style">
+    <ul class="ui-listbox-list" mouseover.delegate="onMouseover($event)" mouseout.delegate="onMouseout($event)" click.delegate="onClick($event)">
+      <li repeat.for="option of options" class="ui-listbox-item ${custom ? 'ui-helper-clearfix' : 'ui-corner-all'}">
+        <template replaceable part="custom-content">
+          ${option.label}
+        </template>
       </li>
-    </ul>
-    <ul class="ui-listbox-list" if.bind="itemTemplate" mouseover.delegate="onMouseover($event)" mouseout.delegate="onMouseout($event)" click.delegate="onClick($event)">
-      <template ngFor [ngForOf]="options" [ngForTemplate]="itemTemplate"></template>
     </ul>
   </div>
 </template>

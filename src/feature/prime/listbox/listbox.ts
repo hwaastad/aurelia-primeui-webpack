@@ -12,24 +12,27 @@ export class ListBoxComponent {
   @bindable disabled: string;
   @bindable valueChange;
   @bindable onChange;
+  @bindable custom:boolean=false;
+  @bindable value;
 
   _value: any;
-  valueChanged: boolean;
+  valueHasChanged: boolean;
 
   constructor(private element:Element,private domHandler:DomHandler){
 
   }
 
-  get value(){
+/*  get value(){
     return this._value;
   }
 
   set value(val:any){
+    console.log('setting val....')
     this._value = val;
     if(!this.multiple) {
-      this.valueChanged = true;
+      this.valueHasChanged = true;
     }
-  }
+  }*/
 
   preselect() {
     let items = this.domHandler.find(this.element, 'li.ui-listbox-item');
@@ -131,7 +134,7 @@ export class ListBoxComponent {
         }
       }
       if(this.valueChange){
-        this.valueChange(valueArr);
+        this.valueChange({event: valueArr});
       }
     }
     else {
@@ -139,7 +142,7 @@ export class ListBoxComponent {
       if(selectedItem) {
         let selectedIndex = this.domHandler.index(selectedItem);
         if(this.valueChange){
-          this.valueChange(this.options[selectedIndex].value);
+          this.valueChange({event: this.options[selectedIndex].value});
         }
       }
       else {
@@ -171,5 +174,10 @@ export class ListBoxComponent {
       }
       return parent;
     }
+  }
+
+  valueChanged(newVal,oldVal){
+    console.log('new: ' + newVal + ' old: '+oldVal);
+    this.value=newVal;
   }
 }

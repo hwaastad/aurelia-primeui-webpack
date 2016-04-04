@@ -1,3 +1,5 @@
+import {SelectItem} from '../../feature/prime/api/selectitem';
+
 export class ListBoxDemo {
   cities: SelectItem[];
 
@@ -28,5 +30,20 @@ export class ListBoxDemo {
     this.cars.push({label: 'Renault', value: 'Renault'});
     this.cars.push({label: 'VW', value: 'VW'});
     this.cars.push({label: 'Volvo', value: 'Volvo'});
+  }
+
+  updateSelected(event) {
+    this.selectedCity=event;
+  }
+
+  updateMultiSelected(event) {
+    this.selectedCities=[];
+    for (var key in event){
+      this.selectedCities.push(event[key]);
+    }
+  }
+
+  updateSelectedCar(event) {
+    this.selectedCar=event;
   }
 }

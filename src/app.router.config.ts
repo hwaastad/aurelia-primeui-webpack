@@ -18,7 +18,7 @@ export class AppRouterConfig {
         { route: 'calendar',  name: 'calendar', moduleId: './components/calendar/calendar',  nav: true, title:'calendar' },
         { route: 'checkbox',  name: 'checkbox', moduleId: './components/checkbox/checkbox',  nav: true, title:'checkbox' },
         { route: 'editor',  name: 'editor', moduleId: './components/editor/editor',  nav: true, title:'editor' },
-        { route: 'listbox',  name: 'editor', moduleId: './components/listbox/listbox',  nav: true, title:'listbox' },
+        { route: 'listboxdemo',  name: 'listboxdemo', moduleId: './components/listbox/listboxdemo',  nav: true, title:'listboxdemo' },
       ]);
       return config;
     });
