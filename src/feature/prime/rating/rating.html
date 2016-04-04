@@ -1,0 +1,11 @@
+<template>
+  <div class="ui-rating" class="${disabled ? 'ui-state-disabled': ''}">
+    <div class="ui-rating-cancel ${hoverCancel ? 'ui-rating-cancel-hover':''}" if.bind="cancel" click.delegate="clear($event)"
+    mouseenter.trigger="hoverCancel=true" mouseleave.trigger="hoverCancel=false">
+    <a></a>
+  </div>
+  <div class="ui-rating-star ${($index < value) ? 'ui-rating-star-on':''}" repeat.for="star of starsArray" click.delegate="rate($event,$index)">
+    <a></a>
+  </div>
+</div>
+</template>

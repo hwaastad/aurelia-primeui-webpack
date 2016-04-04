@@ -5,6 +5,10 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/checkbox/checkbox');
   frameworkConfig.globalResources('./prime/editor/editor');
   frameworkConfig.globalResources('./prime/listbox/listbox');
+  frameworkConfig.globalResources('./prime/password/password');
+  frameworkConfig.globalResources('./prime/rating/rating');
+  frameworkConfig.globalResources('./prime/spinner/spinner');
+  frameworkConfig.globalResources('./prime/togglebutton/togglebutton');
 
   frameworkConfig.globalResources('./prime/autocomplete/autocomplete');
 }

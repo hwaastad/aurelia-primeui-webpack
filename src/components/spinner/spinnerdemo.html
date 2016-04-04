@@ -1,0 +1,27 @@
+<template>
+
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Spinner</span>
+      <span class="defaultText dispTable">Spinner is an input component to provide a numerical input.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p>Due to a bug introduced in latest <a href="https://github.com/angular/zone.js/issues/287">zone.js</a> changes, spinner demos are disabled temporarily.</p>
+    <h3 class="first">Basic</h3>
+    <p-spinner size="30" value.two-way="val1" disabled.bind="false"></p-spinner>
+
+    <h3>Min/Max</h3>
+    <p-spinner size="30" value.two-way="val2" min="0" max="100" disabled.bind="false"></p-spinner>
+
+    <h3>Step</h3>
+    <p-spinner size="30" value.two-way="val3" step="0.25" disabled.bind="false"></p-spinner>
+
+    <h3>Disabled</h3>
+    <p-spinner size="30" value.two-way="val4" disabled.bind="true"></p-spinner>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </deiv>
+</template>

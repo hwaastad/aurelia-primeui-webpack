@@ -11,8 +11,7 @@ import 'primeui/primeui-ng-all.css';
 import '../resources/css/site.css';
 
 //import '../resources/js/quill.min.js';
-
-import 'jqueryui'
+import 'jqueryui';
 import 'jquery';
 
 bootstrap((aurelia: Aurelia): void => {

@@ -1,0 +1,33 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Rating</span>
+      <span class="defaultText dispTable">Rating components is a star based selection input.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic ${val1}</h3>
+    <p-rating value.two-way="val1"></p-rating>
+    <br />
+
+    <h3>Callback ${val2}</h3>
+    <p-rating value.two-way="val2" on-rate.call="handleRate($event)" on-cancel.call="handleCancel($event)"></p-rating> <span if.bind="msg" style="margin-left:10px">${msg}</span>
+    <br />
+
+    <h3>No Cancel ${val3}</h3>
+    <p-rating value.two-way="val3" cancel.bind="false"></p-rating>
+    <br />
+
+    <h3>ReadOnly</h3>
+    <p-rating value="5" readonly="true" stars="10" cancel.bind="false"></p-rating>
+    <br />
+
+    <h3>Disabled</h3>
+    <p-rating value.bind="val4" disabled="true" stars="10"></p-rating>
+    <br />
+  </div>
+
+  <div class="ContentSideSections Source">
+  </deiv>
+</template>

@@ -19,6 +19,10 @@ export class AppRouterConfig {
         { route: 'checkbox',  name: 'checkbox', moduleId: './components/checkbox/checkbox',  nav: true, title:'checkbox' },
         { route: 'editor',  name: 'editor', moduleId: './components/editor/editor',  nav: true, title:'editor' },
         { route: 'listboxdemo',  name: 'listboxdemo', moduleId: './components/listbox/listboxdemo',  nav: true, title:'listboxdemo' },
+        { route: 'password',  name: 'password', moduleId: './components/password/password',  nav: true, title:'password' },
+        { route: 'rating',  name: 'rating', moduleId: './components/rating/rating',  nav: true, title:'rating' },
+        { route: 'spinnerdemo',  name: 'spinnerdemo', moduleId: './components/spinner/spinnerdemo',  nav: true, title:'spinnerdemo' },
+        { route: 'togglebutton',  name: 'togglebutton', moduleId: './components/togglebutton/togglebutton',  nav: true, title:'togglebutton' },
       ]);
       return config;
     });
