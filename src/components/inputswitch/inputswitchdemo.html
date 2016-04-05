@@ -1,0 +1,19 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">InputSwitch</span>
+      <span class="defaultText dispTable">InputSwitch is used to select a boolean value.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic - ${checked1}</h3>
+    <p-inputswitch checked.two-way="checked1"></p-inputswitch>
+
+    <h3>Labels - ${checked2}</h3>
+    <p-inputswitch on-label="Yes" off-label="No" checked.two-way="checked2"></p-inputswitch>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

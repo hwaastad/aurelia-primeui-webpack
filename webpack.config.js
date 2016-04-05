@@ -5,8 +5,15 @@ var path = require('path');
 var AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 var webpack = require('webpack');
 
+var node_dir=__dirname + '/node_modules';
+
 module.exports = {
   resolve: {
+    moduleDirectories: ['node_modules'],
+  /*  alias: {
+      primeui:'primeui/primeui-ng-all.js',
+      'prime-css': node_dir + '/primeui'
+    },*/
     extensions: ['', '.js', '.ts']
   },
   devServer: {
@@ -24,8 +31,9 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
+    //  $: "jquery",
+    //  jQuery: "jquery",
+    //  PUI: 'primeui'
     }),
     new AureliaWebpackPlugin()
   ],

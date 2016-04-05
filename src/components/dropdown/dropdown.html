@@ -1,0 +1,26 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Dropdown</span>
+      <span class="defaultText dispTable">Dropdown is used to select an item from a collection of options. Custom content support and filtering are the notable features.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Single</h3>
+    <p-dropdown options.bind="cities" value.two-way="selectedCity"></p-dropdown>
+    <p>Selected City: ${selectedCity||'none'}</p>
+
+    <h3>Content with Filter</h3>
+    <p-dropdown options.bind="cars" value.two-way="selectedCar" filter.bind="true" style="width:150px">
+      <template replace-part="custom-content">
+      <!--  ${opt.label}-->
+        <img src="resources/demo/images/car/${opt.label}.gif" style="width:24px;position:absolute;top:1px;left:10px"/>
+        <div style="font-size:14px;float:right;margin-top:2px">${opt.label}</div>
+      </template>
+    </p-dropdown>
+    <p>Selected Car: ${selectedCar||'none'}</p>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </template>

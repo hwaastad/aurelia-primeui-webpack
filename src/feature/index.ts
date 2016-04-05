@@ -9,6 +9,8 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/rating/rating');
   frameworkConfig.globalResources('./prime/spinner/spinner');
   frameworkConfig.globalResources('./prime/togglebutton/togglebutton');
+  frameworkConfig.globalResources('./prime/dropdown/dropdown');
+  frameworkConfig.globalResources('./prime/inputswitch/inputswitch');
 
   frameworkConfig.globalResources('./prime/autocomplete/autocomplete');
 }

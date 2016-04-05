@@ -1,0 +1,32 @@
+<template>
+  <div class="${true ? 'ui-dropdown ui-widget ui-state-default ui-corner-all ui-helper-clearfix':''} ${hover ? 'ui-state-hover':''} ${focus ? 'ui-state-focus':''}"
+  mouseenter.trigger="hover=true" mouseleave.trigger="hover=false" click.trigger="onMouseclick($event,in)" style.bind="style">
+  <div class="ui-helper-hidden-accessible">
+    <select>
+      <option repeat.for="option of options" value.bind="option.value">${option.label}</option>
+    </select>
+  </div>
+  <div class="ui-helper-hidden-accessible">
+    <input ref="in" type="text" readonly focus.delegate="onFocus($event)" blur.delegate="onBlur($event)" keydown.delegate="onKeydown($event)">
+  </div>
+  <label class="ui-dropdown-label ui-inputtext ui-corner-all">${label}</label>
+  <div class="ui-dropdown-trigger ui-state-default ui-corner-right ${hover ? 'ui-state-hover':''}">
+    <span class="fa fa-fw fa-caret-down"></span>
+  </div>
+  <div class="ui-dropdown-panel ui-widget-content ui-corner-all ui-helper-hidden ui-shadow" css="display: ${panelVisible ? 'block' : 'none'}">
+    <div if.bind="filter" class="ui-dropdown-filter-container" input.delegate="onFilter($event)" click.delegate="$event.stopPropagation()">
+      <input type="text" autocomplete="off" class="ui-dropdown-filter ui-inputtext ui-widget ui-state-default ui-corner-all">
+      <span class="fa fa-search"></span>
+    </div>
+    <div class="ui-dropdown-items-wrapper" css="max-height:${scrollHeight || 'auto'}">
+      <ul class="ui-dropdown-items ui-dropdown-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" mouseover.delegate="onListMouseover($event)" mouseout.delegate="onListMouseout($event)">
+      <li repeat.for="opt of optionsToDisplay" data-label="${opt.label}" data-value="${opt.value}" click.delegate="onListClick($event)" class="ui-dropdown-item ui-corner-all ui-helper-clearfix" style="position:relative">
+      <template replaceable part="custom-content">
+        ${opt.label}
+      </template>
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+</template>
