@@ -1,0 +1,16 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">MultiSelect</span>
+      <span class="defaultText dispTable">MultiSelect is used to select multiple items from a collection.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-multiselect options.bind="cars" value.two-way="selectedCars"></p-multiselect>
+    <p>Selected Cars: <span repeat.for="c of selectedCars">${c} &nbsp;</span></p>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

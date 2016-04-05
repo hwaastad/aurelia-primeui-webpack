@@ -1,0 +1,44 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">RadioButton</span>
+      <span class="defaultText dispTable">RadioButton is an extension to standard radio button element with skinning capabilities.</span>
+    </div>
+  </div>
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic</h3>
+    <div class="ui-grid ui-grid-responsive" style="width:250px;margin-bottom:10px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-radio name="group1" value="Option 1" model.two-way="val1"></p-radio></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Option 1</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-radio name="group1" value="Option 2" model.two-way="val1"></p-radio></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Option 2</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-radio name="group1" value="Option 3" model.two-way="val1"></p-radio></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Option 3</label></div>
+      </div>
+    </div>
+    Selected Value = ${val1||'none'}
+    <h3>Preselection</h3>
+    <div class="ui-grid ui-grid-responsive" style="width:250px;margin-bottom:10px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-radio name="group1" value="Option 1" model.two-way="val2"></p-radio></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Option 1</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-radio name="group2" value="Option 2" model.two-way="val2"></p-radio></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Option 2</label></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-1"><p-radio name="group2" value="Option 3" model.two-way="val2"></p-radio></div>
+        <div class="ui-grid-col-11"><label class="ui-widget">Option 3</label></div>
+      </div>
+    </div>
+    Selected Value = ${val2||'none'}
+  </div>
+  <div class="ContentSideSections Source">
+  </div>
+</template>

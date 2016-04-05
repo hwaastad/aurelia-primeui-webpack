@@ -26,6 +26,8 @@ export class AppRouterConfig {
         { route: 'dropdown',  name: 'dropdown', moduleId: './components/dropdown/dropdown',  nav: true, title:'dropdown' },
         { route: 'inputswitchdemo',  name: 'inputswitchdemo', moduleId: './components/inputswitch/inputswitchdemo',  nav: true, title:'inputswitchdemo' },
         { route: 'textareademo',  name: 'textareademo', moduleId: './components/textarea/textareademo',  nav: true, title:'textareademo' },
+        { route: 'multiselect',  name: 'multiselect', moduleId: './components/multiselect/multiselectdemo',  nav: true, title:'multiselectdemo' },
+        { route: 'radiobuttondemo',  name: 'radiobuttondemo', moduleId: './components/radiobutton/radiobuttondemo',  nav: true, title:'radiobuttondemo' },
 
       ]);
       return config;

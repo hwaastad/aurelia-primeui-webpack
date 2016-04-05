@@ -1,0 +1,52 @@
+<template>
+  <div class="ui-multiselect ui-widget ui-state-default ui-corner-all ${styleClass}" style.bind="style"
+  mouseenter.delegate="onMouseenter($event)" mouseleave.delegate="onMouseleave($event)" click.delegate="onMouseclick($event,in)">
+  <div class="ui-helper-hidden-accessible">
+    <input ref="in" type="text" readonly="readonly" focus.delegate="onFocus($event)" blur.delegate="onBlur($event)">
+  </div>
+  <div class="ui-multiselect-label-container" title.bind="valuesAsString">
+    <label class="ui-multiselect-label ui-corner-all ${hover ? 'ui-state-hover':''} ${focus ? 'ui-state-focus':''}">${valuesAsString}</label>
+  </div>
+  <div class="ui-multiselect-trigger ui-state-default ui-corner-right ${hover ? 'ui-state-hover':''} ${focus ? ui-state-focus':''}">
+    <span class="fa fa-fw fa-caret-down"></span>
+  </div>
+  <div class="ui-multiselect-panel ui-widget ui-widget-content ui-corner-all" css="display: ${panelVisible ? 'block' : 'none'}" click.trigger="panelClick=true">
+    <div class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix">
+      <div class="ui-chkbox ui-widget">
+        <div class="ui-helper-hidden-accessible">
+          <input ref="cb" type="checkbox" readonly="readonly" checked.bind="isAllChecked()">
+        </div>
+        <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ${hoverToggleAll ? 'ui-state-hover':''}"
+        mouseenter.trigger="hoverToggleAll=true" mouseleave.trigger="hoverToggleAll=false" click.delegate="toggleAll($event,cb)">
+        <span class="ui-chkbox-icon ui-c ${isAllChecked() ? 'fa fa-fw fa-check':''}"></span>
+      </div>
+    </div>
+    <div class="ui-multiselect-filter-container">
+      <input type="text" aria-multiline="false" aria-readonly="false" aria-disabled="false" role="textbox" input.delegate="onFilter($event)"
+      class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all">
+      <span class="fa fa-fw fa-search"></span>
+    </div>
+    <a class="ui-multiselect-close ui-corner-all" href="#" click.delegate="close($event)">
+      <span class="fa fa-close"></span>
+    </a>
+  </div>
+  <div class="ui-multiselect-items-wrapper">
+    <ul class="ui-multiselect-items ui-multiselect-list ui-widget-content ui-widget ui-corner-all ui-helper-reset" css="max-height: ${scrollHeight||'auto'}">
+      <li ref="item" repeat.for="option of options" class="ui-multiselect-item ui-corner-all" click.delegate="onItemClick($event,option.value)"
+       css="display: ${isItemVisible(option) ? 'block' : 'none'}" class="${isSelected(option.value) ? 'ui-state-highlight':''} ${hoveredItem==item ? 'ui-state-hover':''}"
+       mouseenter.trigger="hoveredItem=item" mouseleave.trigger="hoveredItem=null">
+      <div class="ui-chkbox ui-widget">
+        <div class="ui-helper-hidden-accessible">
+          <input type="checkbox" readonly="readonly" checked.bind="isSelected(option.value)">
+        </div>
+        <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ${isSelected(option.value) ? 'ui-state-active':''}">
+          <span class="ui-chkbox-icon ui-c ${isSelected(option.value) ? 'fa fa-fw fa-check':''}"></span>
+        </div>
+      </div>
+      <label>${option.label}</label>
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+</template>

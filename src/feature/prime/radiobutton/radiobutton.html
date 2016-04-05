@@ -1,0 +1,11 @@
+<template>
+  <div class="ui-radiobutton ui-widget">
+    <div class="ui-helper-hidden-accessible">
+      <input type="radio" name.bind="name" value.bind="value" checked.bind="isChecked()"/>
+    </div>
+    <div class="ui-radiobutton-box ui-widget ui-radiobutton-relative ui-state-default ${hover ? 'ui-state-hover':''} ${checked ? 'ui-state-active':''} ${disabled ? 'ui-state-disabled':''}" click.delegate="onclick()"
+    mouseover.trigger="hover=true" mouseout.trigger="hover=false">
+    <span class="ui-radiobutton-icon ${checked ? 'fa fa-fw fa-circle':''}"></span>
+  </div>
+</div>
+</template>
