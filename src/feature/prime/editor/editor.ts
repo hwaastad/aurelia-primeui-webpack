@@ -1,7 +1,7 @@
 import {bindable,autoinject,customElement} from 'aurelia-framework';
 import {DomHandler} from '../dom/domhandler';
 
-//declare var Quill: any;
+declare var Quill: any;
 
 @customElement('p-editor')
 @autoinject()

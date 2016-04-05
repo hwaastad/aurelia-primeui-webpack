@@ -22,7 +22,7 @@ export class InputSwitchComponent {
 
   attached(){
     setTimeout(() => {
-      this.inputSwitchElement = jQuery(this.element.children[0]).find('> .ui-helper-hidden-accessible > input');
+      this.inputSwitchElement = jQuery(this.element.firstElementChild).find('> .ui-helper-hidden-accessible > input');
       this.inputSwitchElement.puiswitch({
         checked: this.checked,
         enhanced: true,

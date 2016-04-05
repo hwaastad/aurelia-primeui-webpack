@@ -62,7 +62,7 @@ export class DropDownComponent {
       this.domHandler.addClass(items[selectedIndex], 'ui-state-highlight');
     }
 
-    this.container = this.element.children[0];
+    this.container = (<HTMLElement>this.element).children[0];
     this.panel = this.domHandler.findSingle(this.element, 'div.ui-dropdown-panel');
     this.itemsWrapper = this.domHandler.findSingle(this.element, 'div.ui-dropdown-items-wrapper');
 
@@ -98,7 +98,7 @@ export class DropDownComponent {
   updateDimensions() {
     let select = this.domHandler.findSingle(this.element, 'select');
     if(!this.style||this.style.indexOf('width') == -1) {
-      this.element.children[0].style.width = select.offsetWidth + 20 + 'px';
+      (<HTMLElement>this.element.firstElementChild).style.width = select.offsetWidth + 20 + 'px';
     }
 
     this.panel.style.width = '100%';
@@ -256,7 +256,6 @@ export class DropDownComponent {
       let selectedOption = this.options[this.findItemIndex(item.dataset.value, this.options)];
       this.label = selectedOption.label;
       this.value = selectedOption.value;
-      //this.valueChange.emit(selectedOption.value);
       if(this.onChange){
         this.onChange(event);
       }
@@ -275,7 +274,6 @@ export class DropDownComponent {
         }
       }
     }
-
     return index;
   }
 

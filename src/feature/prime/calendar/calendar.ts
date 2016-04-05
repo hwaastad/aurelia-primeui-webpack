@@ -38,7 +38,7 @@ export class CalendarComponent {
   }
 
   attached(){
-    this.calendarElement = this.inline ? jQuery(this.element.children[0]) : jQuery(this.element.children[0].children[0]);
+    this.calendarElement = this.inline ? jQuery(this.element.firstElementChild) : jQuery(this.element.firstElementChild.firstElementChild);
     this.calendarElement.datepicker({
       showAnim: this.showAnim,
       dateFormat: this.dateFormat,
