@@ -11,6 +11,6 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/togglebutton/togglebutton');
   frameworkConfig.globalResources('./prime/dropdown/dropdown');
   frameworkConfig.globalResources('./prime/inputswitch/inputswitch');
-
-  frameworkConfig.globalResources('./prime/autocomplete/autocomplete');
+  frameworkConfig.globalResources('./prime/inputswitch/inputswitch');
+  frameworkConfig.globalResources('./prime/inputtextarea/inputtextarea');
 }

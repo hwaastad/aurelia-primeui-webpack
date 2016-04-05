@@ -1,0 +1,19 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">InputTextarea</span>
+      <span class="defaultText dispTable">Inputtextarea add styling and autoResize functionality to standard textare element.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Default</h3>
+    <textarea rows="5" cols="30" p-inputtextarea></textarea>
+
+    <h3>AutoResize</h3>
+    <textarea ref="row" rows="5" cols="30" p-inputtextarea="auto-resize.bind:true; rows.bind:row.rows; cols.bind:row.cols"></textarea>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>
