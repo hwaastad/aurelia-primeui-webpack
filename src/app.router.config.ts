@@ -28,6 +28,14 @@ export class AppRouterConfig {
         { route: 'textareademo',  name: 'textareademo', moduleId: './components/textarea/textareademo',  nav: true, title:'textareademo' },
         { route: 'multiselect',  name: 'multiselect', moduleId: './components/multiselect/multiselectdemo',  nav: true, title:'multiselectdemo' },
         { route: 'radiobuttondemo',  name: 'radiobuttondemo', moduleId: './components/radiobutton/radiobuttondemo',  nav: true, title:'radiobuttondemo' },
+        { route: 'sliderdemo',  name: 'sliderdemo', moduleId: './components/slider/sliderdemo',  nav: true, title:'sliderdemo' },
+        { route: 'selectbuttondemo',  name: 'selectbuttondemo', moduleId: './components/selectbutton/selectbuttondemo',  nav: true, title:'selectbuttondemo' },
+        { route: 'buttondemo',  name: 'buttondemo', moduleId: './components/button/buttondemo',  nav: true, title:'buttondemo' },
+        { route: 'splitbuttondemo',  name: 'splitbuttondemo', moduleId: './components/splitbutton/splitbuttondemo',  nav: true, title:'splitbuttondemo' },
+        { route: 'messagesdemo',  name: 'messagesdemo', moduleId: './components/messages/messagesdemo',  nav: true, title:'messagesdemo' },
+        { route: 'growldemo',  name: 'growldemo', moduleId: './components/growl/growldemo',  nav: true, title:'growldemo' },
+
+
 
       ]);
       return config;

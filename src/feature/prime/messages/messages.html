@@ -1,0 +1,15 @@
+<template>
+  <div if.bind="hasMessages" class="ui-messages ui-widget ui-corner-all ${(value[0].severity === 'info') ? 'ui-messages-info':''} ${(value[0].severity === 'warn') ? 'ui-messages-warn':''} ${(value[0].severity === 'error') ? 'ui-messages-error':''}"
+  style="display:block">
+  <a href="#" class="ui-messages-close" click.delegate="clear($event)" if.bind="closable">
+    <i class="fa fa-close"></i>
+  </a>
+  <span class="ui-messages-icon fa fa-2x fa-info-circle"></span>
+  <ul>
+    <li repeat.for="msg of value">
+      <span class="ui-messages-summary">${msg.summary}</span>
+      <span class="ui-messages-detail">${msg.detail}</span>
+    </li>
+  </ul>
+</div>
+</template>

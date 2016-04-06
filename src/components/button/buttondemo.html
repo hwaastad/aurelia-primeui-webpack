@@ -1,0 +1,26 @@
+<template>
+    <div class="ContentSideSections">
+        <div class="Content100 overHidden TextShadow">
+            <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Button</span>
+            <span class="defaultText dispTable">Button is an extension to standard input element with icons and theming.</span>
+        </div>
+    </div>
+
+    <div class="ContentSideSections Implementation">
+        <button p-button="label:Click" type="text" click.trigger="count()"></button>
+
+        <button p-button="label:Click;icon:fa-check" type="text"  click.trigger="count()"></button>
+
+        <button p-button="label:Click;icon:fa-check;icon-pos:right" type="text"  click.trigger="count()"></button>
+
+        <button p-button="icon:fa-check" type="text"  click.trigger="count()"></button>
+
+        <button  p-button="label:Disabled;icon:fa-check;icon-pos:right" disabled type="text" click.trigger="count()"></button>
+
+        <br />
+        <br /> Number of clicks: ${clicks}
+    </div>
+
+    <div class="ContentSideSections Source">
+    </div>
+</template>

@@ -5,6 +5,7 @@
   "ambientDependencies": {
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
     "jquery": "registry:dt/jquery#1.10.0+20160316155526",
+    "jqueryui": "registry:dt/jqueryui#1.9.0+20160317120654",
     "primeui": "github:primefaces/primeui/primeui.d.ts#7640bc59a3634e501634655217fdd413bed6d003"
   }
 }

@@ -1,4 +1,5 @@
 export function configure(frameworkConfig, configCallback) {
+  //frameworkConfig.globalResources('./prime/api/message');
   frameworkConfig.globalResources('./prime/inputtext/inputtext');
   frameworkConfig.globalResources('./prime/button/button');
   frameworkConfig.globalResources('./prime/calendar/calendar');
@@ -15,4 +16,10 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/inputtextarea/inputtextarea');
   frameworkConfig.globalResources('./prime/multiselect/multiselect');
   frameworkConfig.globalResources('./prime/radiobutton/radiobutton');
+  frameworkConfig.globalResources('./prime/slider/slider');
+  frameworkConfig.globalResources('./prime/selectbutton/selectbutton');
+  frameworkConfig.globalResources('./prime/splitbutton/splitbuttonitem');
+  frameworkConfig.globalResources('./prime/splitbutton/splitbutton');
+  frameworkConfig.globalResources('./prime/growl/growl');
+  frameworkConfig.globalResources('./prime/messages/messages');
 }
