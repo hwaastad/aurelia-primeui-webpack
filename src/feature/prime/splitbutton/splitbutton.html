@@ -1,0 +1,30 @@
+<template>
+  <div class="ui-splitbutton ui-buttonset ui-widget $styleClass" style.bind="style">
+    <button ref="defaultbtn" type="button" class="ui-button ui-widget ui-state-default ui-corner-left ${(!icon&&label) ? 'ui-button-text-only':''} ${(icon&&!label) ? 'ui-button-icon-only':''} ${(icon&&label&&iconPos=='left') ? 'ui-button-text-icon-left':''}
+    ${(icon&&label&&iconPos=='right') ? 'ui-button-text-icon-righ':''} ${hoverDefaultBtn ? 'ui-state-hover':''} ${focusDefaultBtn ? 'ui-state-focus':''} ${activeDefaultBtn ? 'ui-state-active':''}"
+    mouseenter.trigger="hoverDefaultBtn=true" mouseleave.trigger="hoverDefaultBtn=false"  focus.trigger="focusDefaultBtn=true" blur.trigger="focusDefaultBtn=false"
+    mousedown.trigger="activeDefaultBtn=true" mouseup.trigger="activeDefaultBtn=false" click.trigger="onDefaultButtonClick($event)">
+    <span class="ui-button-icon-left ui-c fa fa-fw ${icon}"></span>
+    <span class="ui-button-text ui-c">${label}</span>
+  </button>
+  <button class="ui-splitbutton-menubutton ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right ${hoverDropdown ? 'ui-state-hover':''}
+  ${focusDropdown ? 'ui-state-focus':''} ${activeDropdown ? 'ui-state-active':''}" type="button"
+  mouseenter.trigger="hoverDropdown=true" mouseleave.trigger="hoverDropdown=false" focus.trigger="focusDropdown=true" blur.trigger="focusDropdown=false"
+  mousedown).trigger="activeDropdown=true" mouseup.trigger="activeDropdown=false" click.trigger="onDropdownClick($event,menu,defaultbtn)">
+  <span class="ui-button-icon-left ui-c fa fa-fw fa-caret-down"></span>
+  <span class="ui-button-text ui-c">ui-button</span>
+</button>
+<div ref="menu" class="ui-menu ui-menu-dynamic ui-widget ui-widget-content ui-corner-all ui-helper-clearfix ui-shadow $styleClass" css="display:${menuVisible ? 'block' : 'none'}" style.bind="menuStyle">
+  <ul class="ui-menu-list ui-helper-reset">
+    <content select="p-splitbuttonitem"></content>
+  <!--  <li class="ui-menuitem ui-widget ui-corner-all ${(hoveredItem==item) ? 'ui-state-hover':''}" role="menuitem" repeat.for="item of items"
+    mouseenter.trigger="hoveredItem=item" mouseleave.trigger="hoveredItem=null">
+    <a href.bind="getItemUrl(item)" class="ui-menuitem-link ui-corner-all" click.trigger="onItemClick($event,item)">
+      <span class="ui-menuitem-icon fa fa-fw ${item.icon}" if.bind="item.icon"></span>
+      <span class="ui-menuitem-text">${item.label}</span>
+    </a>
+  </li>-->
+</ul>
+</div>
+</div>
+</template>

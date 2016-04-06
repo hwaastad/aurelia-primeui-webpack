@@ -1,0 +1,9 @@
+<template>
+  <li ref="item" class="ui-menuitem ui-widget ui-corner-all ${(hoveredItem==item) ? 'ui-state-hover':''}" role="menuitem"
+  mouseenter.trigger="hoveredItem=item" mouseleave.trigger="hoveredItem=null">
+  <a href.bind="getItemUrl(url)" class="ui-menuitem-link ui-corner-all" click.delegate="onItemClick($event,item)">
+    <span class="ui-menuitem-icon fa fa-fw ${item.icon}" if.bind="item.icon"></span>
+    <span class="ui-menuitem-text">${label}</span>
+  </a>
+</li>
+</template>
