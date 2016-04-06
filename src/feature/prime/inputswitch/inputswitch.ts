@@ -42,7 +42,7 @@ export class InputSwitchComponent {
     this
   }
 
-  detatched(){
+  detached(){
     this.inputSwitchElement.puiswitch('destroy');
     this.initialized = false;
     this.inputSwitchElement = null;

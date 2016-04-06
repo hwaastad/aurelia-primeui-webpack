@@ -15,4 +15,6 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/inputtextarea/inputtextarea');
   frameworkConfig.globalResources('./prime/multiselect/multiselect');
   frameworkConfig.globalResources('./prime/radiobutton/radiobutton');
+  frameworkConfig.globalResources('./prime/slider/slider');
+  frameworkConfig.globalResources('./prime/selectbutton/selectbutton');
 }

@@ -1,0 +1,26 @@
+<template>
+    <div class="ContentSideSections">
+        <div class="Content100 overHidden TextShadow">
+            <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">SelectButton</span>
+            <span class="defaultText dispTable">SelectButton is used to choose single or multiple items from a list using buttons.</span>
+        </div>
+    </div>
+
+    <div class="ContentSideSections Implementation">
+        <h3 class="first">Single</h3>
+        <p-selectbutton options.bind="types" value.two-way="selectedType"></p-selectbutton>
+
+        <p>Selected Type: ${selectedType}</p>
+
+        <h3>Multiple</h3>
+        <p-selectbutton options.bind="types" value.two-way="selectedTypes" multiple="multiple"></p-selectButton>
+        <p>Selected Types: <span repeat.for="type of selectedTypes">${type} </span></p>
+
+        <hr />
+
+        <button type="button" click.delegate="clear()" p-button="icon:fa-close;label:Clear"></button>
+    </div>
+
+    <div class="ContentSideSections Source">
+    </div>
+</template>

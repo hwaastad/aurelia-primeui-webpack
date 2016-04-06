@@ -56,7 +56,7 @@ export class InputTextAreaAttribute {
     this.element.addEventListener('keyup',this.onKeyup);
   }
 
-  detatched(){
+  detached(){
     this.element.removeEventListener('mouseover',this.onMouseOver);
     this.element.removeEventListener('mouseout',this.onMouseOut);
     this.element.removeEventListener('blur',this.onBlur);

@@ -1,0 +1,8 @@
+<template>
+  <div class="ui-selectbutton ui-buttonset ui-widget ui-corner-all ui-buttonset-${options.length}"  style.bind="style" class.bind="styleClass">
+    <div repeat.for="option of options" mouseenter.trigger="onFocus($event)" mouseleave.trigger="offFocus($event)" class="ui-button ui-widget ui-state-default ui-button-text-only ${hoveredItem==true ? 'ui-state-hover':''} ${isSelected(option,$index) ? 'ui-state-active':''}"
+     click.delegate="onItemClick($event,option,$index)">
+    <span class="ui-button-text ui-c" >${option.label}</span>
+  </div>
+</div>
+</template>

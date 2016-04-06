@@ -71,7 +71,7 @@ export class DropDownComponent {
     this.initialized = true;
   }
 
-  detatched(){
+  detached(){
     document.removeEventListener('click', this.handleBodyClick);
     this.initialized = false;
   }

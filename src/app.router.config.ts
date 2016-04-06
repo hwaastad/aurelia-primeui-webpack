@@ -28,6 +28,10 @@ export class AppRouterConfig {
         { route: 'textareademo',  name: 'textareademo', moduleId: './components/textarea/textareademo',  nav: true, title:'textareademo' },
         { route: 'multiselect',  name: 'multiselect', moduleId: './components/multiselect/multiselectdemo',  nav: true, title:'multiselectdemo' },
         { route: 'radiobuttondemo',  name: 'radiobuttondemo', moduleId: './components/radiobutton/radiobuttondemo',  nav: true, title:'radiobuttondemo' },
+        { route: 'sliderdemo',  name: 'sliderdemo', moduleId: './components/slider/sliderdemo',  nav: true, title:'sliderdemo' },
+        { route: 'selectbuttondemo',  name: 'selectbuttondemo', moduleId: './components/selectbutton/selectbuttondemo',  nav: true, title:'selectbuttondemo' },
+
+
 
       ]);
       return config;
