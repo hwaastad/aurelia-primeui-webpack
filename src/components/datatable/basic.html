@@ -1,0 +1,27 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataTable</span>
+      <span class="defaultText dispTable">DataTable displays data in tabular format.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic</h3>
+
+    <p-datatable value.bind="cars" scrollable.bind="false">
+      <p-column field="vin" header="Vin"></p-column>
+      <p-column field="year" header="Year"></p-column>
+      <p-column field="brand" header="Brand"></p-column>
+      <p-column field="color" header="Color"></p-column>
+    </p-datatable>
+
+  <!--  <h3>Dynamic Columns</h3>
+    <p-datatable value.bind="cars">
+      <p-column repeat.for="col of cols" field.bind="col.field" header.bind="col.header"></p-column>
+    </p-datatable>-->
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

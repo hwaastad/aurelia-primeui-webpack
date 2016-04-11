@@ -41,14 +41,14 @@
 
         <span id="data_menutitle" ref="datamenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="datamenutitle.id == activeMenuId" click.trigger="activeMenuId = datamenutitle.id"><img src="resources/images/mono/data.svg" /><img class="hiddenIcons" src="resources/images/mono/dataBlue.svg" /><span class="MainLinkText">Data*</span></span>
         <div class="SubMenuLinkContainer ${(datamenutitle.id == activeMenuId) ? 'submenushow':'submenuhide'}">
-          <a class="SubMenuLink" [routerLink]="['CarouselDemo']" click.call="mobileMenuActive = false">&#9679; Carousel*</a>
+          <a class="SubMenuLink" href="#carouseldemo" click.call="mobileMenuActive = false">&#9679; Carousel</a>
           <a class="SubMenuLink" [routerLink]="['DataGridDemo']" click.call="mobileMenuActive = false">&#9679; DataGrid*</a>
-          <a class="SubMenuLink" [routerLink]="['DataListDemo']" click.call="mobileMenuActive = false">&#9679; DataList*</a>
+          <a class="SubMenuLink" href="#datalistdemo" click.call="mobileMenuActive = false">&#9679; DataList</a>
           <a class="SubMenuLink" [routerLink]="['DataScrollerDemo']" click.call="mobileMenuActive = false">&#9679; DataScroller*</a>
-          <a class="SubMenuLink" [routerLink]="['DataTableDemo']" click.call="mobileMenuActive = false">&#9679; DataTable*</a>
-          <a class="SubMenuLink" [routerLink]="['OrderListDemo']" click.call="mobileMenuActive = false">&#9679; OrderList*</a>
+          <a class="SubMenuLink" href="#datatabledemo" click.call="mobileMenuActive = false">&#9679; DataTable*</a>
+          <a class="SubMenuLink" href="#orderlistdemo" click.call="mobileMenuActive = false">&#9679; OrderList</a>
           <a class="SubMenuLink" [routerLink]="['GMapDemo']" click.call="mobileMenuActive = false">&#9679; GMap*</a>
-          <a class="SubMenuLink" [routerLink]="['PaginatorDemo']" click.call="mobileMenuActive = false">&#9679; Paginator*</a>
+          <a class="SubMenuLink" href="#paginatordemo" click.call="mobileMenuActive = false">&#9679; Paginator</a>
           <a class="SubMenuLink" [routerLink]="['PickListDemo']" click.call="mobileMenuActive = false">&#9679; PickList*</a>
           <a class="SubMenuLink" [routerLink]="['ScheduleDemo']" click.call="mobileMenuActive = false">&#9679; Schedule*</a>
           <a class="SubMenuLink" [routerLink]="['TreeDemo']" click.call="mobileMenuActive = false">&#9679; Tree*</a>
@@ -57,18 +57,18 @@
 
         <span id="menu_panel" ref="panelmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="panelmenutitle.id == activeMenuId" click.trigger="activeMenuId = panelmenutitle.id"><img src="resources/images/mono/panel.svg" /><img class="hiddenIcons" src="resources/images/mono/panelBlue.svg" /><span class="MainLinkText">Panel*</span></span>
         <div class="SubMenuLinkContainer ${(panelmenutitle.id == activeMenuId) ? 'submenushow':'submenuhide'}">
-          <a class="SubMenuLink" [routerLink]="['AccordionDemo']" click.call="mobileMenuActive = false">&#9679; Accordion*</a>
-          <a class="SubMenuLink" [routerLink]="['FieldsetDemo']" click.call="mobileMenuActive = false">&#9679; Fieldset*</a>
-          <a class="SubMenuLink" [routerLink]="['PanelDemo']" click.call="mobileMenuActive = false">&#9679; Panel*</a>
+          <a class="SubMenuLink" href="#accordiondemo" click.call="mobileMenuActive = false">&#9679; Accordion</a>
+          <a class="SubMenuLink" href="#fieldsetdemo" click.call="mobileMenuActive = false">&#9679; Fieldset</a>
+          <a class="SubMenuLink" href="#paneldemo" click.call="mobileMenuActive = false">&#9679; Panel</a>
           <a class="SubMenuLink" [routerLink]="['GridDemo']" click.call="mobileMenuActive = false">&#9679; Grid*</a>
-          <a class="SubMenuLink" [routerLink]="['TabViewDemo']" click.call="mobileMenuActive = false">&#9679; TabView*</a>
+          <a class="SubMenuLink" href="#tabviewdemo" click.call="mobileMenuActive = false">&#9679; TabView*</a>
         </div>
 
-        <span id="menu_overlay" ref="overlaymenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="overlaymenutitle.id == activeMenuId" click.trigger="activeMenuId = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay*</span></span>
+        <span id="menu_overlay" ref="overlaymenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="overlaymenutitle.id == activeMenuId" click.trigger="activeMenuId = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay</span></span>
         <div class="SubMenuLinkContainer ${(overlaymenutitle.id == activeMenuId) ? 'submenushow':'submenuhide'}">
-          <a class="SubMenuLink" [routerLink]="['DialogDemo']" click.call="mobileMenuActive = false">&#9679; Dialog*</a>
-          <a class="SubMenuLink" [routerLink]="['LightboxDemo']" click.call="mobileMenuActive = false">&#9679; Lightbox*</a>
-          <a class="SubMenuLink" [routerLink]="['OverlayPanelDemo']" click.call="mobileMenuActive = false">&#9679; OverlayPanel*</a>
+          <a class="SubMenuLink" href="#dialogdemo" click.call="mobileMenuActive = false">&#9679; Dialog</a>
+          <a class="SubMenuLink" href="#lightboxdemo" click.call="mobileMenuActive = false">&#9679; Lightbox</a>
+          <a class="SubMenuLink" href="#overlaypaneldemo" click.call="mobileMenuActive = false">&#9679; OverlayPanel</a>
         </div>
 
         <span id="menu_menu" ref="menumenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="menumenutitle.id == activeMenuId" click.trigger="activeMenuId = menumenutitle.id"><img src="resources/images/mono/menu.svg" /><img class="hiddenIcons" src="resources/images/mono/menuBlue.svg" /><span class="MainLinkText">Menu*</span></span>

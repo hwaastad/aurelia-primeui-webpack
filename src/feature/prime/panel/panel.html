@@ -1,0 +1,14 @@
+<template>
+  <div class="ui-panel ui-widget ui-widget-content ui-corner-all ${styleClass}" style.bind="style">
+    <div class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all">
+      <span class="ui-panel-title">${header}</span>
+      <a if.bind="toggleable" class="ui-panel-titlebar-icon ui-panel-titlebar-toggler ui-corner-all ui-state-default ${hoverToggler ? 'ui-state-hover':''}" href="#"
+      mouseenter.trigger="hoverToggler=true" mouseleave.trigger="hoverToggler=false" click.delegate="toggle($event)">
+      <span class="fa fa-fw ${$collapsed ? 'fa-plus':'fa-minus'}"></span>
+    </a>
+  </div>
+  <div class="ui-panel-content ui-widget-content" css="display:${collapsed ? 'none' : 'block'}">
+    <content></content>
+  </div>
+</div>
+</template>

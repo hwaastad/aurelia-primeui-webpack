@@ -1,0 +1,12 @@
+<template>
+  <div class="ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow ${styleClass}" style.bind="style"
+  css="display: ${visible ? 'block' : 'none'}" click.delegate="onPanelClick()">
+  <div class="ui-overlaypanel-content">
+    <content></content>
+  </div>
+  <a href="#" if.bind="showCloseIcon" class="ui-overlaypanel-close ui-state-default ${hoverCloseIcon ? 'ui-state-hover':''}"
+  mouseenter.trigger="hoverCloseIcon=true" mouseleave.trigger="hoverCloseIcon=false" click.delegate="onCloseClick($event)">
+  <span class="fa fa-fw fa-close"></span>
+</a>
+</div>
+</template>

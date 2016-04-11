@@ -1,0 +1,19 @@
+<template>
+  <div class="ui-orderlist ui-grid ui-widget ${responsive ? 'ui-grid-responsive':''} ${styleClass}" style.bind="style">
+    <div class="ui-grid-row">
+      <div class="ui-orderlist-controls ui-grid-col-2">
+        <button type="button" p-button="icon:fa-angle-up" click.delegate="moveUp($event,listelement)"></button>
+        <button type="button" p-button="icon:fa-angle-double-up" click.delegate="moveTop($event,listelement)"></button>
+        <button type="button" p-button="icon:fa-angle-down" click.delegate="moveDown($event,listelement)"></button>
+        <button type="button" p-button="icon:fa-angle-double-down" click.delegate="moveBottom($event,listelement)"></button>
+      </div>
+      <div class="ui-grid-col-10">
+        <div class="ui-orderlist-caption ui-widget-header ui-corner-top" if.bind="header">${header}</div>
+        <ul ref="listelement" class="ui-widget-content ui-orderlist-list ui-corner-bottom" style.bind="listStyle"
+        mouseover.delegate="onMouseover($event)" mouseout.delegate="onMouseout($event)" click.delegate="onClick($event)">
+        <template replaceable part="item-template"/>
+      </ul>
+    </div>
+  </div>
+</div>
+</template>

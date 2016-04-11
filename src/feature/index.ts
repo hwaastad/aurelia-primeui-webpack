@@ -1,6 +1,9 @@
 export function configure(frameworkConfig, configCallback) {
   //frameworkConfig.globalResources('./prime/api/message');
   frameworkConfig.globalResources('./prime/inputtext/inputtext');
+  frameworkConfig.globalResources('./prime/common/header');
+  frameworkConfig.globalResources('./prime/common/footer');
+  frameworkConfig.globalResources('./prime/column/column');
   frameworkConfig.globalResources('./prime/button/button');
   frameworkConfig.globalResources('./prime/calendar/calendar');
   frameworkConfig.globalResources('./prime/checkbox/checkbox');
@@ -22,4 +25,18 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/splitbutton/splitbutton');
   frameworkConfig.globalResources('./prime/growl/growl');
   frameworkConfig.globalResources('./prime/messages/messages');
+  frameworkConfig.globalResources('./prime/panel/panel');
+  frameworkConfig.globalResources('./prime/accordion/accordiontab');
+  frameworkConfig.globalResources('./prime/accordion/accordion');
+  frameworkConfig.globalResources('./prime/fieldset/fieldset');
+  frameworkConfig.globalResources('./prime/tabview/tabpanel');
+  frameworkConfig.globalResources('./prime/tabview/tabview');
+  frameworkConfig.globalResources('./prime/dialog/dialog');
+  frameworkConfig.globalResources('./prime/lightbox/lightbox');
+  frameworkConfig.globalResources('./prime/overlaypanel/overlaypanel');
+  frameworkConfig.globalResources('./prime/datatable/datatable');
+  frameworkConfig.globalResources('./prime/paginator/paginator');
+  frameworkConfig.globalResources('./prime/orderlist/orderlist');
+  frameworkConfig.globalResources('./prime/carousel/carousel');
+  frameworkConfig.globalResources('./prime/datalist/datalist');
 }

@@ -1,0 +1,12 @@
+<template>
+  <fieldset class="ui-fieldset ui-widget ui-widget-content ui-corner-all' ${toggleable ? 'ui-fieldset-toggleable':'} ${styleClass}" style.bind="style">
+    <legend class="ui-fieldset-legend ui-corner-all ui-state-default ui-unselectable-text ${hover ? 'ui-state-hover':''}"
+    mouseenter.delegate="onLegendMouseenter($event)" mouseleave.delegate="onLegendMouseleave($event)" click.delegate="toggle($event)">
+    <span if.bind="toggleable" class="ui-fieldset-toggler fa fa-w ${collapsed ? 'fa-plus':'fa-minus'}"></span>
+    ${legend}
+  </legend>
+  <div class="ui-fieldset-content" css="display:${collapsed ? 'none' : 'block'}">
+    <content></content>
+  </div>
+</fieldset>
+</template>

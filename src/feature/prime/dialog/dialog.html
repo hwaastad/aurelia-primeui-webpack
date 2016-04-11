@@ -1,0 +1,20 @@
+<template>
+  <div class="ui-dialog ui-widget ui-widget-content ui-helper-hidden ui-corner-all ui-shadow ${rtl ? 'ui-dialog-rtl':''}">
+    <div class="ui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top">
+      <span class="ui-dialog-title">${header}</span>
+      <a class="ui-dialog-titlebar-icon ui-dialog-titlebar-close ui-corner-all" href="#" role="button" if.bind="closable">
+        <span class="fa fa-fw fa-close"></span>
+      </a>
+      <a class="ui-dialog-titlebar-icon ui-dialog-titlebar-maximize ui-corner-all" href="#" role="button" if.bind="maximizable">
+        <span class="fa fa-fw fa-sort"></span>
+      </a>
+      <a class="ui-dialog-titlebar-icon ui-dialog-titlebar-minimize ui-corner-all" href="#" role="button" if.bind="minimizable">
+        <span class="fa fa-fw fa-minus"></span>
+      </a>
+    </div>
+    <div class="ui-dialog-content ui-widget-content">
+      <content></content>
+    </div>
+    <content select="footer"></content>
+  </div>
+</template>

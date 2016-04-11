@@ -1,0 +1,27 @@
+<template bindable="router">
+  <div id="datatable-submenu" class="ContentSideSections SubSubMenu ui-helper-clearfix">
+    <ul>
+      <li repeat.for="row of router.navigation">
+        <a href.bind="row.href">&#9679; ${row.title}</a>
+      </li>
+    </ul>
+    <!--  <ul>
+    <li><a href="#basic">&#9679; Basic</a></li>
+    <li><a href="#facets">&#9679; Facets</a></li>
+    <li><a href="#sort">&#9679; Templating</a></li>
+    <li><a [routerLink]="['DataTableGroupDemo']">&#9679; Group</a></li>
+    <li><a [routerLink]="['DataTablePaginatorDemo']">&#9679; Paginator</a></li>
+    <li><a [routerLink]="['DataTableSortDemo']">&#9679; Sort</a></li>
+    <li><a [routerLink]="['DataTableFilterDemo']">&#9679; Filter</a></li>
+    <li><a [routerLink]="['DataTableSelectionDemo']">&#9679; Selection</a></li>
+    <li><a [routerLink]="['DataTableEditableDemo']">&#9679; Editable</a></li>
+    <li><a [routerLink]="['DataTableColResizeDemo']">&#9679; Resize</a></li>
+    <li><a [routerLink]="['DataTableColReorderDemo']">&#9679; Reorder</a></li>
+    <li><a [routerLink]="['DataTableScrollDemo']">&#9679; Scroll</a></li>
+    <li><a [routerLink]="['DataTableLazyDemo']">&#9679; Lazy</a></li>
+    <li><a [routerLink]="['DataTableCMDemo']">&#9679; ContextMenu</a></li>
+    <li><a [routerLink]="['DataTableResponsiveDemo']">&#9679; Responsive</a></li>
+    <li><a [routerLink]="['DataTableCrudDemo']">&#9679; Crud</a></li>
+  </ul>-->
+</div>
+</template>

@@ -1,0 +1,15 @@
+<template>
+  <div class="ui-tabview ui-widget ui-widget-content ui-corner-all ui-tabview-${orientation} $styleClass" style.bind="style">
+    <ul class="ui-tabview-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+      <template repeat.for="tab of tabs">
+        <li class="getDefaultHeaderClass(tab) ${tab.selected ? 'ui-tabview-selected ui-state-active':''} ${tab.hoverHeader&&!tab.disabled ? 'ui-state-hover':''} ${tab.disabled ? 'ui-state-disabled':''}" style.bind="tab.headerStyle"
+        mouseenter.trigger="tab.hoverHeader=true" mouseleave.trigger="tab.hoverHeader=false" click.delegate="open($event,tab)" if.bind="!tab.closed">
+        <a href="#">{$tab.header}</a><span if.bind="tab.closable" class="fa fa-close" click.delegate="close($event,tab)"></span>
+      </li>
+    </template>
+  </ul>
+  <div class="ui-tabview-panels">
+    <content select="p-tabpanel"></content>
+  </div>
+</div>
+</template>

@@ -1,0 +1,46 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Carousel</span>
+      <span class="defaultText dispTable">Carousel displays content using a slide effect featuring responsive mode, swipe support for touch enabled devices and various customization options.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+
+    <p-growl value.bind="msgs"></p-growl>
+
+    <p-carousel header-text="Cars" value.bind="cars" responsive.bind="true">
+      <template replace-part="item-template">
+        <li repeat.for="car of cars">
+          <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-12"><img src="resources/demo/images/car/${car.brand}.gif" /></div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-6">Vin</div>
+              <div class="ui-grid-col-6">${car.vin}</div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-6">Year</div>
+              <div class="ui-grid-col-6">${car.year}</div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-6">Color</div>
+              <div class="ui-grid-col-6">${car.color}</div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-12">
+                <button type="button" p-button="icon:fa-search" click.delegate="selectCar(car)"></button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </template>
+    </p-carousel>
+
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+  </template>

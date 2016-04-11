@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "rimraf": "rimraf",
-    "clean":"npm run rimraf -- build dist",
+    "clean": "npm run rimraf -- build dist",
     "dev": "webpack-dev-server --config webpack.config.js --hot --inline --progress --devtool eval-source-map",
     "build": "webpack --config webpack.config.js --progress --profile",
     "prod": "webpack -p --config webpack.prod.config.js --progress --devtool source-map",
@@ -22,7 +22,7 @@
     "aurelia-bootstrapper-webpack": "^1.0.0-beta.1.0.0",
     "aurelia-dependency-injection": "^1.0.0-beta.1.2.0",
     "aurelia-event-aggregator": "^1.0.0-beta.1.2.0",
-    "aurelia-fetch-client": "^1.0.0-beta.1.2.0",
+    "aurelia-fetch-client": "^1.0.0-beta.1.2.1",
     "aurelia-framework": "^1.0.0-beta.1.2.1",
     "aurelia-history-browser": "^1.0.0-beta.1.2.0",
     "aurelia-loader": "^1.0.0-beta.1.2.0",
@@ -31,7 +31,7 @@
     "aurelia-metadata": "^1.0.0-beta.1.2.0",
     "aurelia-pal": "^1.0.0-beta.1.2.0",
     "aurelia-pal-browser": "^1.0.0-beta.1.2.0",
-    "aurelia-path": "^1.0.0-beta.1.2.0",
+    "aurelia-path": "^1.0.0-beta.1.2.1",
     "aurelia-polyfills": "^1.0.0-beta.1.1.1",
     "aurelia-router": "^1.0.0-beta.1.2.0",
     "aurelia-task-queue": "^1.0.0-beta.1.2.0",
@@ -41,7 +41,7 @@
     "aurelia-templating-router": "^1.0.0-beta.1.2.0",
     "font-awesome": "^4.5.0",
     "moment": "^2.12.0",
-    "primeui": "^4.1.6"
+    "primeui": "^4.1.7"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.20",
@@ -52,10 +52,10 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
-    "ts-loader": "^0.8.1",
+    "ts-loader": "^0.8.2",
     "typescript": "^1.8.9",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14",
+    "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1"
   }
 }

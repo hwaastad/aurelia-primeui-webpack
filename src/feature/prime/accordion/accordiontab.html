@@ -1,0 +1,13 @@
+<template>
+  <div class="ui-accordion-header ui-helper-reset ui-state-default ${selected ? 'ui-state-active':''} ${hover&&!disabled ? 'ui-state-hover':''} ${disabled ? 'ui-state-disabled':''}"
+  click.delegate="toggle($event)" mouseenter.trigger="hover = true" mouseleave.trigger="hover=false">
+  <span class="fa fa-fw ${selected ? 'fa-caret-down':'fa-caret-right'}"></span>
+  <a href="#" *if.bind="!headerFacet">${header}</a>
+  <a href="#" *if.bind="headerFacet">
+    <content select="header"></content>
+  </a>
+</div>
+<div class="ui-accordion-content ui-helper-reset ui-widget-content" css="display: ${selected ? 'block' : 'none'}">
+  <content></content>
+</div>
+</template>

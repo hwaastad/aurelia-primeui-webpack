@@ -1,0 +1,26 @@
+<template>
+  <div style.bind="style" class="ui-paginator ui-widget-header ui-unselectable-text ${styleClass}">
+    <span ref="firstlink" class="ui-paginator-first ui-paginator-element ui-state-default ui-corner-all ${firstPage ? 'ui-state-disabled':''} ${(firstlink === hoveredItem && !firstPage) ? 'ui-state-hover':''}"
+    mouseenter.trigger="hoveredItem = $event.target" mouseleave.trigger="hoveredItem = null" click.delegate="changePageToFirst()">
+    <span class="fa fa-step-backward"></span>
+  </span>
+  <span ref="prevlink" class="ui-paginator-prev ui-paginator-element ui-state-default ui-corner-all ${firstPage ? 'ui-state-disabled':''} ${(prevlink === hoveredItem && !firstPage) ? 'ui-state-hover':''}"
+  mouseenter.trigger="hoveredItem = $event.target" mouseleave.trigger="hoveredItem = null" click.delegate="changePageToPrev()">
+  <span class="fa fa-backward"></span>
+</span>
+<span class="ui-paginator-pages">
+  <span ref="plink" repeat.for="pageLink of pageLinks" class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all ${(plink === hoveredItem) ? 'ui-state-hover':''} ${(pageLink-1 == page) ? 'ui-state-active':''}"
+  mouseenter.trigger="hoveredItem = $event.target" mouseleave.trigger="hoveredItem = null" click.delegate="changePage(pageLink - 1)">${pageLink}</span>
+</span>
+<span ref="nextlink" class="ui-paginator-next ui-paginator-element ui-state-default ui-corner-all ${lastPage? 'ui-state-disabled':''} ${(nextlink === hoveredItem  && !lastPage) ? 'ui-state-hover':''}" mouseenter.trigger="hoveredItem = $event.target" mouseleave.trigger="hoveredItem = null" click.delegate="changePageToNext()">
+  <span class="fa fa-forward"></span>
+</span>
+<span ref="lastlink" class="ui-paginator-last ui-paginator-element ui-state-default ui-corner-all ${lastPage ? 'ui-state-disabled':''} ${(lastlink === hoveredItem  && !lastPage) ? 'ui-state-hover':''}"
+mouseenter.trigger="hoveredItem = $event.target" mouseleave.trigger="hoveredItem = null" click.delegate="changePageToLast()">
+<span class="fa fa-step-forward"></span>
+</span>
+<select class="ui-paginator-rpp-options ui-widget ui-state-default" if.bind="rowsPerPageOptions" change.delegate="onRppChange($event)">
+  <option repeat.for="opt of rowsPerPageOptions" value.bind="opt" selected.bind="rows == opt">${opt}</option>
+</select>
+</div>
+</template>

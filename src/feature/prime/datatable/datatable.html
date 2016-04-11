@@ -1,0 +1,97 @@
+<template>
+  <div style.bind="style" class="${styleClass} ui-datatable ui-widget ${responsive ? 'ui-datatable-reflow':''} ${stacked ? 'ui-datatable-stacked':''}">
+  <div class="ui-datatable-header ui-widget-header" if.bind="header">
+    <content select="header"></content>
+  </div>
+  <div class="ui-datatable-tablewrapper" if.bind="!scrollable">
+    <table>
+      <thead>
+        <tr if.bind="!headerRows" class="ui-state-default">
+          <th ref="headerCell" repeat.for="col of columns" style.bind="col.style"
+          click.delegate="sort($event,col)" mouseenter.trigger="hoveredHeader = $event.target" mouseleave.trigger="hoveredHeader = null"
+          class="ui-state-default ui-unselectable-text ${headerCell === hoveredHeader && col.sortable ? 'ui-state-hover':''} ${col.sortable ? 'ui-sortable-column':''} ${isSorted(col) ? 'ui-state-active':''} ${col.styleClass}">
+          <span class="ui-column-title">{{col.header}}</span>
+          <span class="ui-sortable-column-icon fa fa-fw fa-sort ${(getSortOrder(col) == -1) ? 'fa-sort-desc':''} ${(getSortOrder(col) == 1) ? 'fa-sort-asc':''}" if.bind="col.sortable"></span>
+          <input type="text" p-inputtext class="ui-column-filter" if.bind="col.filter" click.delegate="onFilterInputClick($event)" keyup.delegate="onFilterKeyup($event.target.value, col.field, col.filterMatchMode)"/>
+        </th>
+      </tr>
+      <tr repeat.for="headerRow of headerRows" class="ui-state-default">
+        <th ref="headerCell" repeat.for="col of headerRow.columns" style.bind="col.style" colspan.bind="col.colspan" rowspan.bind="col.rowspan"
+        click.delegate="sort($event,col)" mouseenter.trigger="hoveredHeader = $event.target" mouseleave.trigger="hoveredHeader = null"
+        class="ui-state-default ui-unselectable-text ${headerCell === hoveredHeader && col.sortable ? 'ui-state-hover':''} ${col.sortable ? 'ui-sortable-column':''} ${isSorted(col) ? 'ui-state-active':''} ${col.styleClass}">
+        <span class="ui-column-title">{{col.header}}</span>
+        <span class="ui-sortable-column-icon fa fa-fw fa-sort ${(getSortOrder(col) == -1) ? 'fa-sort-desc':''} ${(getSortOrder(col) == 1) ? 'fa-sort-asc':''}" if.bind="col.sortable"></span>
+        <input type="text" p-inputtext class="ui-column-filter" if.bind="col.filter" click.delegate="onFilterInputClick($event)" keyup.delegate="onFilterKeyup($event.target.value, col.field, col.filterMatchMode)"/>
+      </th>
+    </tr>
+  </thead>
+  <tfoot if.bind="hasFooter()">
+    <tr if.bind="!footerRows">
+      <th repeat.for="col of columns" style.bind="col.style" class="ui-state-default ${col.styleClass}">${col.footer}</th>
+    </tr>
+    <tr repeat.for="footerRow of footerRows">
+      <th repeat.for="col of footerRow.columns" style.bind="col.style" class="${col.styleClass} ui-state-default" colspan.bind="col.colspan" rowspan.bind="col.rowspan">${col.footer}</th>
+    </tr>
+  </tfoot>
+  <tbody class="ui-datatable-data ui-widget-content">
+    <tr ref="rowElement" repeat.for="rowData of dataToRender" class="ui-widget-content ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''} ${isSelected(rowData) ? 'ui-state-highlight':''}"
+    (mouseenter)="hoveredRow = $event.target" (mouseleave)="hoveredRow = null"
+    (click)="onRowClick($event, rowData)" (dblclick)="rowDblclick($event,rowData)" context-menu.delegate="onRowRightClick($event,rowData)">
+    <td repeat.for="col of columns" style.bind="col.style"
+    class="${col.styleClass} ${col.editable ? 'ui-editable-column':''}" (click)="switchCellToEditMode($event.target,col,rowData)">
+    <span class="ui-column-title" if.bind="responsive">${col.header}</span>
+    <span class="ui-cell-data" if.bind="!col.template">{{resolveFieldData(rowData,col.field)}}</span>
+    <span class="ui-cell-data" if.bind="col.template">
+      <p-columnTemplateLoader [column]="col" [rowData]="rowData"></p-columnTemplateLoader>
+    </span>
+    <input type="text" class="ui-cell-editor ui-state-highlight" if.bind="col.editable" value.two-way="rowData[col.field]"
+    (blur)="switchCellToViewMode($event.target,col,rowData,true)" (keydown)="onCellEditorKeydown($event, col, rowData)"/>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ui-widget-header ui-datatable-scrollable-header" if.bind="scrollable">
+  <div class="ui-datatable-scrollable-header-box">
+    <table>
+      <thead>
+        <tr>
+          <th ref="headerCell" repeat.for="col of columns" [attr.style]="col.style" [attr.class]="col.styleClass"
+          (click)="sort($event,col)" (mouseenter)="hoveredHeader = $event.target" (mouseleave)="hoveredHeader = null"
+          [ngClass]="{'ui-state-default ui-unselectable-text':true, 'ui-state-hover': headerCell === hoveredHeader && col.sortable,'ui-sortable-column': col.sortable,'ui-state-active': col.field === sortField}">
+          <span class="ui-column-title">{{col.header}}</span>
+          <span class="ui-sortable-column-icon fa fa-fw fa-sort" if.bind="col.sortable"
+          [ngClass]="{'fa-sort-desc': (col.field === sortField) && (sortOrder == -1),'fa-sort-asc': (col.field === sortField) && (sortOrder == 1)}"></span>
+          <input type="text" p-inputtext class="ui-column-filter" if.bind="col.filter" (click)="onFilterInputClick($event)" (keyup)="onFilterKeyup($event.target.value, col.field, col.filterMatchMode)"/>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+</div>
+<div class="ui-datatable-scrollable-body" if.bind="scrollable">
+  <table>
+    <tbody class="ui-datatable-data ui-widget-content">
+      <tr ref="rowElement" repeat.for="rowData of dataToRender" class="ui-widget-content" (mouseenter)="hoveredRow = $event.target" (mouseleave)="hoveredRow = null"
+      (click)="onRowClick($event, rowData)" (dblclick)="rowDblclick($event,rowData)"
+      [ngClass]="{'ui-datatable-even':even,'ui-datatable-odd':odd,'ui-state-hover': (selectionMode && rowElement == hoveredRow), 'ui-state-highlight': isSelected(rowData)}">
+      <td *ngFor="#col of columns" [attr.style]="col.style" [attr.class]="col.styleClass" [ngClass]="{'ui-editable-column':col.editable}" (click)="switchCellToEditMode($event.target,col,rowData)">
+        <span class="ui-column-title" if.bind="responsive">{{col.header}}</span>
+        <span class="ui-cell-data" if.bind="!col.template">{{resolveFieldData(rowData,col.field)}}</span>
+        <span class="ui-cell-data" if.bind="col.template">
+          <p-columnTemplateLoader [column]="col" [rowData]="rowData"></p-columnTemplateLoader>
+        </span>
+        <input type="text" class="ui-cell-editor ui-state-highlight" *ngIf="col.editable" [(ngModel)]="rowData[col.field]"
+        (blur)="switchCellToViewMode($event.target,col,rowData,true)" (keydown)="onCellEditorKeydown($event,col,rowData)"/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p-paginator [rows]="rows" [first]="first" [totalRecords]="totalRecords" [pageLinkSize]="pageLinks" styleClass="ui-paginator-bottom"
+(onPageChange)="paginate($event)" [rowsPerPageOptions]="rowsPerPageOptions" *ngIf="paginator"></p-paginator>
+<div class="ui-datatable-footer ui-widget-header" *ngIf="footer">
+  <ng-content select="footer"></ng-content>
+</div>
+</div>
+</template>

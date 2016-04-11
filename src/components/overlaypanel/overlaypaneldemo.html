@@ -1,0 +1,50 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">OverlayPanel</span>
+      <span class="defaultText dispTable">OverlayPanel is a container component that can overlay other components on page.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic</h3>
+    <p>Click the button to show the panel.</p>
+    <button ref="btn" type="text" p-button="label:Basic" click.delegate="op1.toggle($event,btn)"></button>
+    <p-overlaypanel p-overlaypanel.ref="op1">
+      <img src="resources/demo/images/galleria/galleria1.jpg" alt="Galleria 1" />
+    </p-overlaypanel>
+
+    <h3>Customized</h3>
+    <p>This OverlayPanel gets displayed on hover of the icon, is not dismissable and displays a close icon. TODO: fix table</p>
+    <i class="fa fa-search" mouseenter.trigger="op2.show($event)" style="font-size:24px"></i>
+
+    <p-overlaypanel p-overlaypanel.ref="op2" show-close-icon.bind="true" dismissable.bind="false">
+      <p-datatable value.bind="cars1" style="width:500px">
+        <p-column field="vin" header="Vin" [sortable]="true"></p-column>
+        <p-column field="year" header="Year" [sortable]="true"></p-column>
+        <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+        <p-column field="color" header="Color" [sortable]="true"></p-column>
+      </p-datatable>
+    </p-overlaypanel>
+
+    <h3>DataTable Integration - TODO: fix table</h3>
+    <p-datatable [value]="cars2">
+      <p-column style="width:10%;text-align:center" header="Logo">
+        <template #car="rowData">
+          <button type="button" pButton (click)="selectCar($event,car,op3);" icon="fa-search"></button>
+        </template>
+      </p-column>
+      <p-column field="vin" header="Vin"></p-column>
+      <p-column field="year" header="Year"></p-column>
+      <p-column field="brand" header="Brand"></p-column>
+      <p-column field="color" header="Color"></p-column>
+    </p-datatable>
+
+    <p-overlaypanel ref="op3">
+      <img src="resources/demo/images/car/${selectedCar.brand}-big.gif" if.bind="selectedCar"/>
+    </p-overlaypanel>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </deiv>
+</template>

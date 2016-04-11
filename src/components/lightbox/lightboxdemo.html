@@ -1,0 +1,31 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Lightbox</span>
+      <span class="defaultText dispTable">LightBox is a modal overlay component to display images, videos, inline html content and iframes.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic</h3>
+    <p-lightbox>
+      <a repeat.for="image of images" href="resources/demo/images/sopranos/${image}.jpg">
+        <img src="resources/demo/images/sopranos/${image}_small.jpg" alt="${image}"/>
+      </a>
+    </p-lightbox>
+
+    <h3>Content</h3>
+    <p-lightbox>
+      <a class="group" href="#">
+        View Content
+      </a>
+
+      <div class="ui-helper-hidden">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </p-lightbox>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

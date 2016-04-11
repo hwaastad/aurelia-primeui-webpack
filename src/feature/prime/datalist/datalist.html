@@ -1,0 +1,18 @@
+<template>
+  <div class="ui-datalist ui-widget ${styleClass}" style.bind="style">
+    <div class="ui-datalist-header ui-widget-header ui-corner-top">
+      <content select="header"></content>
+    </div>
+    <div class="ui-datalist-content ui-widget-content">
+      <ul class="ui-datalist-data">
+        <li repeat.for="item of dataToRender" part="item-template">
+        </li>
+      </ul>
+    </div>
+    <p-paginator rows.bind="rows" first.bind="first" total-records.bind="totalRecords" page-link-size.bind="pageLinks"
+    on-page-change.call="paginate($event)" style-class="ui-paginator-bottom" rows-per-page-options.bind="rowsPerPageOptions" if.bind="paginator"></p-paginator>
+    <div class="ui-datalist-footer ui-widget-header ui-corner-bottom">
+      <content select="footer"></content>
+    </div>
+  </div>
+</template>

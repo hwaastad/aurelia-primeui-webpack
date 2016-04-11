@@ -34,6 +34,18 @@ export class AppRouterConfig {
         { route: 'splitbuttondemo',  name: 'splitbuttondemo', moduleId: './components/splitbutton/splitbuttondemo',  nav: true, title:'splitbuttondemo' },
         { route: 'messagesdemo',  name: 'messagesdemo', moduleId: './components/messages/messagesdemo',  nav: true, title:'messagesdemo' },
         { route: 'growldemo',  name: 'growldemo', moduleId: './components/growl/growldemo',  nav: true, title:'growldemo' },
+        { route: 'paneldemo',  name: 'paneldemo', moduleId: './components/panel/paneldemo',  nav: true, title:'paneldemo' },
+        { route: 'accordiondemo',  name: 'accordiondemo', moduleId: './components/accordion/accordiondemo',  nav: true, title:'accordiondemo' },
+        { route: 'fieldsetdemo',  name: 'fieldsetdemo', moduleId: './components/fieldset/fieldsetdemo',  nav: true, title:'fieldsetdemo' },
+        { route: 'tabviewdemo',  name: 'tabviewdemo', moduleId: './components/tabview/tabviewdemo',  nav: true, title:'tabviewdemo' },
+        { route: 'dialogdemo',  name: 'dialogdemo', moduleId: './components/dialog/dialogdemo',  nav: true, title:'dialogdemo' },
+        { route: 'lightboxdemo',  name: 'lightboxdemo', moduleId: './components/lightbox/lightboxdemo',  nav: true, title:'lightboxdemo' },
+        { route: 'overlaypaneldemo',  name: 'overlaypaneldemo', moduleId: './components/overlaypanel/overlaypaneldemo',  nav: true, title:'overlaypaneldemo' },
+        { route: 'datatabledemo',  name: 'datatabledemo', moduleId: './components/datatable/index',  nav: true, title:'datatabledemo' },
+        { route: 'paginatordemo',  name: 'paginatordemo', moduleId: './components/paginator/paginatordemo',  nav: true, title:'paginatordemo' },
+        { route: 'orderlistdemo',  name: 'orderlistdemo', moduleId: './components/orderlist/orderlistdemo',  nav: true, title:'orderlistdemo' },
+        { route: 'carouseldemo',  name: 'carouseldemo', moduleId: './components/carousel/carouseldemo',  nav: true, title:'carouseldemo' },
+        { route: 'datalistdemo',  name: 'datalistdemo', moduleId: './components/datalist/datalistdemo',  nav: true, title:'datalistdemo' },
 
 
 

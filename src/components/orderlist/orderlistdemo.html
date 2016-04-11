@@ -1,0 +1,35 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">OrderList</span>
+      <span class="defaultText dispTable">OrderList is used to sort a collection. When the position of an item changes, the backend array is updated as well.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+
+    <div class="ui-grid ui-grid-responsive">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">
+          <p-orderlist value.bind="cars" listStyle="height:250px" responsive.bind="true" header="Responsive Cars">
+            <template replace-part="item-template">
+              <li repeat.for="car of cars" class="ui-orderlist-item ui-helper-clearfix">
+                <img src="resources/demo/images/car/${car.brand}.gif" style="display:inline-block;margin:2px 0 2px 2px"/>
+                <div style="font-size:14px;float:right;margin:15px 5px 0 0">${car.brand} - ${car.year} - ${car.color}</div>
+              </li>
+            </template>
+          </p-orderlist>
+        </div>
+        <div class="ui-grid-col-6">
+          <ul>
+            <li repeat.for="car of cars" style="list-style-type:none">${car.brand} - ${car.year} - ${car.color}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>
