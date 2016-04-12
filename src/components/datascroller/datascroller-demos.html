@@ -1,0 +1,9 @@
+<template bindable="router">
+  <div id="datatable-submenu" class="ContentSideSections SubSubMenu ui-helper-clearfix">
+    <ul>
+      <li repeat.for="row of router.navigation">
+        <a href.bind="row.href">&#9679; ${row.title}</a>
+      </li>
+    </ul>
+</div>
+</template>

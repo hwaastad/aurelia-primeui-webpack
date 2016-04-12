@@ -5,8 +5,7 @@
     </div>
     <div class="ui-datalist-content ui-widget-content">
       <ul class="ui-datalist-data">
-        <li repeat.for="item of dataToRender" part="item-template">
-        </li>
+        <li repeat.for="item of dataToRender" part="item-template"/>
       </ul>
     </div>
     <p-paginator rows.bind="rows" first.bind="first" total-records.bind="totalRecords" page-link-size.bind="pageLinks"

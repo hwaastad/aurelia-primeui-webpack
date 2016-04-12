@@ -1,0 +1,72 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataScroller</span>
+      <span class="defaultText dispTable">DataScroller displays data with on demand loading using scroll.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-datascroller value.bind="cars" rows="10" buffer="0.4">
+      <header>
+        Scroll Down to to Load More
+      </header>
+      <template replace-part="item-template">
+        <li style="border-bottom:1px solid #D5D5D5;">
+          <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px">
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-3" style="text-align:center"><i class="fa fa-search" click.delegate="selectCar(item)" style="cursor:pointer;float:left;margin-top:40px"></i><img src="resources/demo/images/car/${item.brand}-big.gif"></div>
+              <div class="ui-grid-col-9">
+                <div class="ui-grid ui-grid-responsive ui-fluid">
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">Vin: </div>
+                    <div class="ui-grid-col-10">${item.vin}</div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">Year: </div>
+                    <div class="ui-grid-col-10">${item.year}</div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">Brand: </div>
+                    <div class="ui-grid-col-10">${item.brand}</div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-grid-col-2">Color: </div>
+                    <div class="ui-grid-col-10">${item.color}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </template>
+    </p-datascroller>
+
+    <p-dialog header="Car Details" visible.two-way="displayDialog" responsive.bind="true" showEffect="fade" modal.bind="true" width="225" on-after-hide.call="onDialogHide()">
+      <div class="ui-grid ui-grid-responsive ui-fluid" if.bind="selectedCar" style="font-size:16px;text-align:center;padding:20px">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-12" style="text-align:center"><img src="resources/demo/images/car/${selectedCar.brand}-big.gif"></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4">Vin: </div>
+          <div class="ui-grid-col-8">${selectedCar.vin}</div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4">Year: </div>
+          <div class="ui-grid-col-8">${selectedCar.year}</div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4">Brand: </div>
+          <div class="ui-grid-col-8">${selectedCar.brand}</div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4">Color: </div>
+          <div class="ui-grid-col-8">${selectedCar.color}</div>
+        </div>
+      </div>
+    </p-dialog>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

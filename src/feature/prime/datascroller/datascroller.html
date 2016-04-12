@@ -1,0 +1,25 @@
+<template>
+<style>
+.ui-grid-row > div {
+  padding: 4px 10px;
+  font-size: 20px;
+}
+
+.ui-grid-row .ui-grid-row > div:last-child {
+  font-weight: bold;
+}
+</style>
+<div class="ui-datascroller ui-widget ${inline ? 'ui-datascroller-inline':''} ${styleClass}" style.bind="style">
+  <div class="ui-datascroller-header ui-widget-header ui-corner-top">
+    <content select="header"></content>
+  </div>
+  <div class="ui-datascroller-content ui-widget-content" css="max-height: ${scrollHeight}">
+    <ul class="ui-datascroller-list">
+      <li repeat.for="item of dataToRender" part="item-template"/>
+    </ul>
+  </div>
+  <div class="ui-datascroller-footer ui-widget-header ui-corner-bottom">
+    <content select="footer"></content>
+  </div>
+</div>
+</template>

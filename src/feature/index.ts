@@ -39,4 +39,5 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/orderlist/orderlist');
   frameworkConfig.globalResources('./prime/carousel/carousel');
   frameworkConfig.globalResources('./prime/datalist/datalist');
+  frameworkConfig.globalResources('./prime/datascroller/datascroller');
 }

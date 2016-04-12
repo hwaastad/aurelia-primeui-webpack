@@ -8,8 +8,15 @@ export class CarService {
   constructor(private http:HttpClient){}
 
   getCarsSmall(): Promise<Car[]> {
-    console.log('fetching cars...');
     return this.http.fetch('resources/data/cars-small.json')
+    .then(response => response.json())
+    .then(data =>{
+      return <Car[]>data.data;
+    });
+  }
+
+  getCarsMedium(): Promise<Car[]> {
+    return this.http.fetch('resources/data/cars-medium.json')
     .then(response => response.json())
     .then(data =>{
       return <Car[]>data.data;
