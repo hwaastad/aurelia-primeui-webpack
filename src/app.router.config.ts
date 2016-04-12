@@ -47,7 +47,7 @@ export class AppRouterConfig {
         { route: 'carouseldemo',  name: 'carouseldemo', moduleId: './components/carousel/carouseldemo',  nav: true, title:'carouseldemo' },
         { route: 'datalistdemo',  name: 'datalistdemo', moduleId: './components/datalist/datalistdemo',  nav: true, title:'datalistdemo' },
         { route: 'datascrollerdemo',  name: 'datascrollerdemo', moduleId: './components/datascroller/index',  nav: true, title:'datascrollerdemo' },
-
+        { route: 'picklistdemo',  name: 'picklistdemo', moduleId: './components/picklist/picklistdemo',  nav: true, title:'picklistdemo' },
 
 
 

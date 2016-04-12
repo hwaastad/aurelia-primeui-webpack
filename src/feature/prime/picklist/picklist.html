@@ -1,0 +1,42 @@
+<template>
+  <div style.bind="style" class="ui-picklist ui-widget ui-helper-clearfix ${responsive ? 'ui-picklist-responsive': ''} ${styleClass}">
+    <div class="ui-picklist-source-controls ui-picklist-buttons">
+      <div class="ui-picklist-buttons-cell">
+        <button type="button" p-button="icon:fa-angle-up" click.delegate="moveUp(sourcelist,source)"></button>
+        <button type="button" p-button="icon:fa-angle-double-up" click.delegate="moveTop(sourcelist,source)"></button>
+        <button type="button" p-button="icon:fa-angle-down" click.delegate="moveDown(sourcelist,source)"></button>
+        <button type="button" p-button="icon:fa-angle-double-down" click.delegate="moveBottom(sourcelist,source)"></button>
+      </div>
+    </div>
+    <div class="ui-picklist-listwrapper ui-picklist-source-wrapper">
+      <div class="ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr">${sourceHeader}</div>
+      <ul ref="sourcelist" class="ui-widget-content ui-picklist-list ui-picklist-source ui-corner-bottom" style.bind="sourceStyle"
+      mouseover.delegate="onMouseover($event)" mouseout.delegate="onMouseout($event)" click.delegate="onClick($event)">
+      <li repeat.for="item of source" part="item-template"/>
+    </ul>
+  </div>
+  <div class="ui-picklist-buttons">
+    <div class="ui-picklist-buttons-cell">
+      <button type="button" p-button="icon:fa-angle-right" click.delegate="moveRight(sourcelist)"></button>
+      <button type="button" p-button="icon:fa-angle-double-right" click.delegate="moveAllRight(sourcelist)"></button>
+      <button type="button" p-button="icon:fa-angle-left" click.delegate="moveLeft(targetlist)"></button>
+      <button type="button" p-button="icon:fa-angle-double-left" click.delegate="moveAllLeft(targetlist)"></button>
+    </div>
+  </div>
+  <div class="ui-picklist-listwrapper ui-picklist-target-wrapper">
+    <div class="ui-picklist-caption ui-widget-header ui-corner-tl ui-corner-tr">${targetHeader}</div>
+    <ul ref="targetlist" class="ui-widget-content ui-picklist-list ui-picklist-source ui-corner-bottom" style.bind="targetStyle"
+    mouseover.delegate="onMouseover($event)" mouseout.delegate="onMouseout($event)" click.delegate="onClick($event)">
+    <li repeat.for="item of target" part="item-template"/>
+  </ul>
+</div>
+<div class="ui-picklist-target-controls ui-picklist-buttons">
+  <div class="ui-picklist-buttons-cell">
+    <button type="button" p-button="icon:fa-angle-up" click.trigger="moveUp(targetlist,target)"></button>
+    <button type="button" p-button="icon:fa-angle-double-up" click.delegate="moveTop(targetlist,target)"></button>
+    <button type="button" p-button="icon:fa-angle-down" click.delegate="moveDown(targetlist,target)"></button>
+    <button type="button" p-button="icon:fa-angle-double-down" click.delegate="moveBottom(targetlist,target)"></button>
+  </div>
+</div>
+</div>
+</template>

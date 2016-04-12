@@ -1,0 +1,24 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">PickList</span>
+      <span class="defaultText dispTable">PickList is used to reorder items between differents lists.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+
+    <p-picklist source.bind="sourceCars" target.bind="targetCars" source-header="Available" target-header="Selected" responsive.bind="true" source-style="height:300px" target-style="height:300px">
+      <template replace-part="item-template">
+        <li class="ui-picklist-item ui-helper-clearfix">
+          <img src="resources/demo/images/car/${item.brand}.gif" style="display:inline-block;margin:2px 0 2px 2px"/>
+          <div style="font-size:14px;float:right;margin:15px 5px 0 0">${item.brand} - ${item.year} - ${item.color}</div>
+        </li>
+      </template>
+    </p-picklist>
+
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>
