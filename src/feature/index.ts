@@ -43,4 +43,5 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/picklist/picklist');
   frameworkConfig.globalResources('./prime/breadcrumb/breadcrumb');
   frameworkConfig.globalResources('./prime/menu/menu');
+  frameworkConfig.globalResources('./prime/panelmenu/panelmenu');
 }

@@ -50,6 +50,7 @@ export class AppRouterConfig {
         { route: 'picklistdemo',  name: 'picklistdemo', moduleId: './components/picklist/picklistdemo',  nav: true, title:'picklistdemo' },
         { route: 'breadcrumbdemo',  name: 'breadcrumbdemo', moduleId: './components/breadcrumb/breadcrumbdemo',  nav: true, title:'breadcrumbdemo' },
         { route: 'menudemo',  name: 'menudemo', moduleId: './components/menu/menudemo',  nav: true, title:'menudemo' },
+        { route: 'panelmenudemo',  name: 'panelmenudemo', moduleId: './components/panelmenu/panelmenudemo',  nav: true, title:'panelmenudemo' },
 
 
 
