@@ -48,6 +48,8 @@ export class AppRouterConfig {
         { route: 'datalistdemo',  name: 'datalistdemo', moduleId: './components/datalist/datalistdemo',  nav: true, title:'datalistdemo' },
         { route: 'datascrollerdemo',  name: 'datascrollerdemo', moduleId: './components/datascroller/index',  nav: true, title:'datascrollerdemo' },
         { route: 'picklistdemo',  name: 'picklistdemo', moduleId: './components/picklist/picklistdemo',  nav: true, title:'picklistdemo' },
+        { route: 'breadcrumbdemo',  name: 'breadcrumbdemo', moduleId: './components/breadcrumb/breadcrumbdemo',  nav: true, title:'breadcrumbdemo' },
+
 
 
 
