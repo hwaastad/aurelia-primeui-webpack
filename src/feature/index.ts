@@ -48,4 +48,5 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/slidemenu/slidemenu');
   frameworkConfig.globalResources('./prime/menubar/menubar');
   frameworkConfig.globalResources('./prime/megamenu/megamenu');
+  frameworkConfig.globalResources('./prime/progressbar/progressbar');
 }

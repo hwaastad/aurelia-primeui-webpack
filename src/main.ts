@@ -1,7 +1,7 @@
 import {Aurelia} from 'aurelia-framework';
 import {bootstrap} from 'aurelia-bootstrapper-webpack';
 
-import 'primeui/themes/delta/theme.css';
+//import 'primeui/themes/delta/theme.css';
 import 'font-awesome/css/font-awesome.css';
 
 /*import '../resources/css/jquery-ui.css';
@@ -11,8 +11,8 @@ import 'prime-css/primeui-ng-all.css';*/
 //import '../resources/css/site.css';
 
 import 'jqueryui';
-import 'jquery';
-import 'primeui';
+//import 'jquery';
+//import 'primeui';
 
 bootstrap((aurelia: Aurelia): void => {
   aurelia.use

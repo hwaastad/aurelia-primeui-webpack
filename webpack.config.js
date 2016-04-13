@@ -33,7 +33,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      PUI: 'primeui'
+      PUI: 'primeui',
     }),
     new AureliaWebpackPlugin()
   ],

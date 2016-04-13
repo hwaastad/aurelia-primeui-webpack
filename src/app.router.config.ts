@@ -55,7 +55,7 @@ export class AppRouterConfig {
         { route: 'slidemenudemo',  name: 'slidemenudemo', moduleId: './components/slidemenu/slidemenudemo',  nav: true, title:'slidemenudemo' },
         { route: 'menubardemo',  name: 'menubardemo', moduleId: './components/menubar/menubardemo',  nav: true, title:'menubardemo' },
         { route: 'megamenudemo',  name: 'megamenudemo', moduleId: './components/megamenu/megamenudemo',  nav: true, title:'megamenudemo' },
-
+        { route: 'progressbardemo',  name: 'progressbardemo', moduleId: './components/progressbar/progressbardemo',  nav: true, title:'progressbardemo' },
 
 
 
