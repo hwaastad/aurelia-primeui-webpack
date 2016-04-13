@@ -71,14 +71,14 @@
           <a class="SubMenuLink" href="#overlaypaneldemo" click.call="mobileMenuActive = false">&#9679; OverlayPanel</a>
         </div>
 
-        <span id="menu_menu" ref="menumenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="menumenutitle.id == activeMenuId" click.trigger="activeMenuId = menumenutitle.id"><img src="resources/images/mono/menu.svg" /><img class="hiddenIcons" src="resources/images/mono/menuBlue.svg" /><span class="MainLinkText">Menu*</span></span>
+        <span id="menu_menu" ref="menumenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="menumenutitle.id == activeMenuId" click.trigger="activeMenuId = menumenutitle.id"><img src="resources/images/mono/menu.svg" /><img class="hiddenIcons" src="resources/images/mono/menuBlue.svg" /><span class="MainLinkText">Menu</span></span>
         <div class="SubMenuLinkContainer ${(menumenutitle.id == activeMenuId) ? 'submenushow':'submenuhide'}">
           <a class="SubMenuLink" href="#breadcrumbdemo" click.call="mobileMenuActive = false">&#9679; Breadcrumb</a>
-          <a class="SubMenuLink" [routerLink]="['MegaMenuDemo']" click.call="mobileMenuActive = false">&#9679; MegaMenu*</a>
+          <a class="SubMenuLink" href="#megamenudemo" click.call="mobileMenuActive = false">&#9679; MegaMenu</a>
           <a class="SubMenuLink" href="#menudemo" click.call="mobileMenuActive = false">&#9679; Menu</a>
-          <a class="SubMenuLink" [routerLink]="['MenubarDemo']" click.call="mobileMenuActive = false">&#9679; Menubar*</a>
+          <a class="SubMenuLink" href="#menubardemo" click.call="mobileMenuActive = false">&#9679; Menubar</a>
           <a class="SubMenuLink" href="#panelmenudemo" click.call="mobileMenuActive = false">&#9679; PanelMenu</a>
-          <a class="SubMenuLink" href="#slidemenudemo" click.call="mobileMenuActive = false">&#9679; SlideMenu*</a>
+          <a class="SubMenuLink" href="#slidemenudemo" click.call="mobileMenuActive = false">&#9679; SlideMenu</a>
           <a class="SubMenuLink" href="#tieredmenudemo" click.call="mobileMenuActive = false">&#9679; TieredMenu</a>
         </div>
 
