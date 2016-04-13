@@ -52,6 +52,8 @@ export class AppRouterConfig {
         { route: 'menudemo',  name: 'menudemo', moduleId: './components/menu/menudemo',  nav: true, title:'menudemo' },
         { route: 'panelmenudemo',  name: 'panelmenudemo', moduleId: './components/panelmenu/panelmenudemo',  nav: true, title:'panelmenudemo' },
         { route: 'tieredmenudemo',  name: 'tieredmenudemo', moduleId: './components/tieredmenu/tieredmenudemo',  nav: true, title:'tieredmenudemo' },
+        { route: 'slidemenudemo',  name: 'slidemenudemo', moduleId: './components/slidemenu/slidemenudemo',  nav: true, title:'slidemenudemo' },
+
 
 
 

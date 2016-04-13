@@ -1,0 +1,12 @@
+<template>
+  <div [attr.class]="styleClass" style.bind="style" class="ui-menu ui-slidemenu ui-widget ui-widget-content ui-corner-all ${styleClass}">
+    <div class="ui-slidemenu-wrapper">
+      <div class="ui-slidemenu-content">
+        <content></content>
+      </div>
+      <div class="ui-slidemenu-backward ui-widget-header ui-corner-all">
+        <span class="fa fa-fw fa-caret-left"></span>${backLabel}
+      </div>
+    </div>
+  </div>
+</template>

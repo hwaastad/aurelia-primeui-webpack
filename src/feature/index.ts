@@ -45,4 +45,5 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/menu/menu');
   frameworkConfig.globalResources('./prime/panelmenu/panelmenu');
   frameworkConfig.globalResources('./prime/tieredmenu/tieredmenu');
+  frameworkConfig.globalResources('./prime/slidemenu/slidemenu');
 }
