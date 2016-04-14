@@ -1,0 +1,34 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Galleria</span>
+      <span class="defaultText dispTable">Galleria is a content gallery component.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <h3 class="first">Basic</h3>
+    <p-galleria panel-width="500" panel-height="313">
+      <ul>
+        <li repeat.for="image of images">
+          <img src="resources/demo/images/galleria/${image}" alt="Description for Image ${$index}" title="Image ${$index}"/>
+        </li>
+      </ul>
+    </p-galleria>
+
+    <h3>Custom Content</h3>
+    <p-galleria panel-width="500" panel-height="313" custom-content="customContent" show-caption.bind="false">
+      <ul>
+        <li repeat.for="image of images">
+          <img src="/resources/demo/images/galleria/${image}" />
+          <div>
+            <h2>Content For Item ${$index}</h2>
+          </div>
+        </li>
+      </ul>
+    </p-galleria>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+  </template>

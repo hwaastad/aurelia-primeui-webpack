@@ -105,10 +105,10 @@
       <span id="menu_multimedia" ref="multimediamenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="multimediamenutitle.id == activeMenuId"
       click.trigger="activeMenuId = multimediamenutitle.id"><img src="resources/images/mono/multimedia.svg">
       <img class="hiddenIcons" src="resources/images/mono/multimediaBlue.svg" style="opacity: 0;">
-      <span class="MainLinkText">Multimedia*</span>
+      <span class="MainLinkText">Multimedia</span>
     </span>
     <div class="SubMenuLinkContainer ${(multimediamenutitle.id == activeMenuId) ? 'submenushow':'submenuhide'}">
-      <a class="SubMenuLink" [routerLink]="['GalleriaDemo']" click.call="mobileMenuActive = false">&#9679; Galleria*</a>
+      <a class="SubMenuLink" href="#galleriademo" click.call="mobileMenuActive = false">&#9679; Galleria</a>
     </div>
     <span id="menu_misc" ref="misctitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="misctitle.id == activeMenuId"
     click.trigger="activeMenuId = misctitle.id"><img src="resources/images/mono/misc.svg">
