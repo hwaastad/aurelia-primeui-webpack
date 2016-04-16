@@ -11,6 +11,8 @@ import 'prime-css/primeui-ng-all.css';*/
 //import '../resources/css/site.css';
 
 import 'jqueryui';
+import 'fullcalendar';
+import 'fullcalendar/dist/fullcalendar.css';
 //import 'jquery';
 //import 'primeui';
 

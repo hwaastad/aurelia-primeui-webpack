@@ -50,4 +50,6 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/megamenu/megamenu');
   frameworkConfig.globalResources('./prime/progressbar/progressbar');
   frameworkConfig.globalResources('./prime/galleria/galleria');
+  frameworkConfig.globalResources('./prime/schedule/schedule');
+
 }

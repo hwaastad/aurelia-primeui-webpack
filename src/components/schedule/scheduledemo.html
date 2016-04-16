@@ -1,0 +1,43 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Schedule</span>
+      <span class="defaultText dispTable">Schedule is an event calendar based on FullCalendar. This sample demonstrates a crud scenario using a Dialog.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-schedule events.two-way="events" header.bind="header" default-date="2016-01-12" event-limit="4" editable.bind="true"
+    on-day-click.call="handleDayClick($event)" on-event-click.call="handleEventClick($event)"></p-schedule>
+
+    <p-dialog header="Event Details" visible.two-way="dialogVisible" responsive.bind="true" show-effect="fade" modal.bind="false">
+      <div class="ui-grid ui-grid-responsive ui-fluid" if.bind="event">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="vin">Title</label></div>
+          <div class="ui-grid-col-8"><input p-inputtext id="title" value.two-way="event.title" /></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="start">Start</label></div>
+          <div class="ui-grid-col-8"><p-calendar id="start" date-format="yy-mm-dd"  value.two-way="event.start"></p-calendar></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="end">End</label></div>
+          <div class="ui-grid-col-8"><p-calendar id="end" date-format="yy-mm-dd"  value.two-way="event.end" default-date="2016-01-01" placeholder="Optional"></p-calendar></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="allday">All Day</label></div>
+          <div class="ui-grid-col-8"><p-checkbox  checked.two-way="event.allDay"></p-checkbox></div>
+        </div>
+      </div>
+      <footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+          <button type="button" p-button="icon:fa-close;label:Delete" click.delegate="deleteEvent()"></button>
+          <button type="button" p-button="icon:fa-check;label:Save" click.delegate="saveEvent()"></button>
+        </div>
+      </footer>
+    </p-dialog>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>
