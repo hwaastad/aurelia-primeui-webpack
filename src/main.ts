@@ -9,7 +9,7 @@ import '../resources/css/quill.snow.css';
 import 'prime-css/primeui-ng-all.css';*/
 
 //import '../resources/css/site.css';
-
+//import 'chart.js';
 import 'jqueryui';
 import 'fullcalendar';
 import 'fullcalendar/dist/fullcalendar.css';

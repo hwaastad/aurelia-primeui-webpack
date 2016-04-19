@@ -1,0 +1,21 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">BarChart</span>
+      <span class="defaultText dispTable">A bar chart or bar graph is a chart that presents Grouped data with rectangular bars with lengths proportional to the values that they represent.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-growl value.bind="msgs"></p-growl>
+
+    <h3 class="first">Basic</h3>
+    <p-barchart value.bind="data" width="640" height="320"></p-barchart>
+
+    <h3>Interactive and Customized</h3>
+    <p-barchart value.bind="data" width="640" height="320" on-bars-select.call="onSelect($event)" bar-show-stroke.bind="false" bar-value-spacing="10"></p-barchart>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

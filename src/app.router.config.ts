@@ -58,6 +58,9 @@ export class AppRouterConfig {
         { route: 'progressbardemo',  name: 'progressbardemo', moduleId: './components/progressbar/progressbardemo',  nav: true, title:'progressbardemo' },
         { route: 'galleriademo',  name: 'galleriademo', moduleId: './components/galleria/galleriademo',  nav: true, title:'galleriademo' },
         { route: 'scheduledemo',  name: 'scheduledemo', moduleId: './components/schedule/scheduledemo',  nav: true, title:'scheduledemo' },
+        { route: 'barchartdemo',  name: 'barchartdemo', moduleId: './components/charts/barchartdemo',  nav: true, title:'barchartdemo' },
+        { route: 'linechartdemo',  name: 'linechartdemo', moduleId: './components/charts/linechartdemo',  nav: true, title:'linechartdemo' },
+
 
 
 
