@@ -60,6 +60,8 @@ export class AppRouterConfig {
         { route: 'scheduledemo',  name: 'scheduledemo', moduleId: './components/schedule/scheduledemo',  nav: true, title:'scheduledemo' },
         { route: 'barchartdemo',  name: 'barchartdemo', moduleId: './components/charts/barchartdemo',  nav: true, title:'barchartdemo' },
         { route: 'linechartdemo',  name: 'linechartdemo', moduleId: './components/charts/linechartdemo',  nav: true, title:'linechartdemo' },
+        { route: 'piechartdemo',  name: 'piechartdemo', moduleId: './components/charts/piechartdemo',  nav: true, title:'piechartdemo' },
+        { route: 'doughnutdemo',  name: 'doughnutdemo', moduleId: './components/charts/doughnutdemo',  nav: true, title:'doughnutdemo' },
 
 
 

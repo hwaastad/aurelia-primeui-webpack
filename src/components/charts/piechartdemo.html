@@ -1,0 +1,30 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">PieChart</span>
+      <span class="defaultText dispTable">A pie chart is a circular statistical graphic, which is divided into slices to illustrate numerical proportion.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-growl value.bind="msgs"></p-growl>
+
+    <div class="ui-grid ui-grid-responsive" style="margin-bottom:10px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">
+          <h3 class="first">Basic</h3>
+          <p-piechart value.two-way="data1" width="300" height="300"></p-piechart>
+        </div>
+        <div class="ui-grid-col-6">
+          <h3 class="first">Interactive and Customized</h3>
+          <p-piechart value.two-way="data2" width="300" height="300" on-segments-select.call="onSegmentClick($event)"
+          segment-show-stroke.bind="false" animation-steps="50" animation-easing="easeInOutQuint" animate-scale.bind="true"></p-piechart>
+        </div>
+      </div>
+    </div>
+    <button type="button" click.delegate="removeYellow()" p-button="icon:fa-minus; label:Remove Yellow" css="width:300px" if.bind="!updated" label="Remove Yellow"></button>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

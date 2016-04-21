@@ -1,0 +1,30 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DoughnutChart</span>
+      <span class="defaultText dispTable">A doughnut chart is a variant of the pie chart, with a blank center allowing for additional information about the data as a whole to be included.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-growl value.bind="msgs"></p-growl>
+
+    <div class="ui-grid ui-grid-responsive" style="margin-bottom:10px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">
+          <h3 class="first">Basic</h3>
+          <p-doughnutchart value.bind="data1" width="300" height="300"></p-doughnutchart>
+        </div>
+        <div class="ui-grid-col-6">
+          <h3 class="first">Interactive and Customized</h3>
+          <p-doughnutchart value.bind="data2" width="300" height="300" on-segments-select.call="onSegmentClick($event)"
+          segment-show-stroke.bind="false" animation-steps="50" animation-easing="easeInOutQuint" animate-scale.bind="true"></p-doughnutchart>
+        </div>
+      </div>
+      <button type="button" click.delegate="removeYellow()"  p-button="icon:fa-minus; label:Remove Yellow"  css="width:300px;margin:10px 0px" if.bind="!updated"></button>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>
