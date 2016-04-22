@@ -1,0 +1,28 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">PolarAreaChart</span>
+      <span class="defaultText dispTable">Polar area charts are similar to pie charts, but each segment has the same angle - the radius of the segment differs depending on the value.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-growl value.bind="msgs"></p-growl>
+
+    <div class="ui-grid ui-grid-responsive" style="margin-bottom:10px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">
+          <h3 class="first">Basic</h3>
+          <p-polarareachart value.bind="data" width="300" height="300"></p-polarareachart>
+        </div>
+        <div class="ui-grid-col-6">
+          <h3 class="first">Interactive and Customized</h3>
+          <p-polarareachart value.bind="data" width="300" height="300" animation-easing="easeInOutQuint" scale-show-line.bind="false" on-segments-select.call="onSegmentClick($event)"></p-polarareachart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

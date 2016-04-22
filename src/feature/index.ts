@@ -55,5 +55,7 @@ export function configure(frameworkConfig, configCallback) {
   frameworkConfig.globalResources('./prime/charts/linechart');
   frameworkConfig.globalResources('./prime/charts/piechart');
   frameworkConfig.globalResources('./prime/charts/doughnutchart');
+  frameworkConfig.globalResources('./prime/charts/polarareachart');
+
 
 }

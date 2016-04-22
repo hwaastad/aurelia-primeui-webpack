@@ -62,6 +62,9 @@ export class AppRouterConfig {
         { route: 'linechartdemo',  name: 'linechartdemo', moduleId: './components/charts/linechartdemo',  nav: true, title:'linechartdemo' },
         { route: 'piechartdemo',  name: 'piechartdemo', moduleId: './components/charts/piechartdemo',  nav: true, title:'piechartdemo' },
         { route: 'doughnutdemo',  name: 'doughnutdemo', moduleId: './components/charts/doughnutdemo',  nav: true, title:'doughnutdemo' },
+        { route: 'polarareachartdemo',  name: 'polarareachartdemo', moduleId: './components/charts/polarareachartdemo',  nav: true, title:'polarareachartdemo' },
+
+
 
 
 
