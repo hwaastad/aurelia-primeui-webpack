@@ -1,0 +1,21 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">RadarChart</span>
+      <span class="defaultText dispTable">A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-growl value.bind="msgs"></p-growl>
+
+    <h3 class="first">Basic</h3>
+    <p-radarchart value.bind="data" width="640" height="320"></p-radarchart>
+
+    <h3>Interactive and Customized</h3>
+    <p-radarchart value.bind="data" width="640" height="320" scale-show-line.bind="false" angle-line-width="5" point-dot.bind="false" dataset-fill.bind="false" on-points-select.call="onSelect($event)"></p-radarchart>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>
