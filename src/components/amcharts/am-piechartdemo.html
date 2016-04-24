@@ -1,7 +1,7 @@
 <template>
   <div class="ContentSideSections">
     <div class="Content100 overHidden TextShadow">
-      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">AmCharts BarChart</span>
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">AmCharts PieChart</span>
       <span class="defaultText dispTable">A bar chart or bar graph is a chart that presents Grouped data with rectangular bars with lengths proportional to the values that they represent.</span>
     </div>
   </div>
@@ -10,7 +10,7 @@
     <p-growl value.bind="msgs"></p-growl>
 
     <h3 class="first">Basic</h3>
-    <am-barchart data-provider.bind="chartData" export.bind="true" category-field="country" value-field="visits" title="Visitors" on-click.call="handleChange($event)"></am-barchart>
+    <am-piechart data-provider.bind="chartData" export.bind="true" category-field="country" value-field="litres"></am-piechart>
   </div>
 
   <div class="ContentSideSections Source">

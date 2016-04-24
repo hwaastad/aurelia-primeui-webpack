@@ -94,7 +94,8 @@
 
         <span id="am_chart" ref="chartmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="chartmenutitle.id == activeMenuId" click.trigger="activeMenuId = amchartmenutitle.id"><img src="resources/images/mono/charts.svg" /><img class="hiddenIcons" src="resources/images/mono/chartsBlue.svg" /><span class="MainLinkText">AmCharts</span></span>
         <div class="SubMenuLinkContainer ${(amchartmenutitle.id == activeMenuId) ? 'submenushow':'submenuhide'}">
-          <a class="SubMenuLink" href="#ambarchartdemo" click.call="mobileMenuActive = false">&#9679; BarChart</a>
+          <a class="SubMenuLink" href="#ampiechartdemo" click.call="mobileMenuActive = false">&#9679; PieChart</a>
+          <a class="SubMenuLink" href="#ambarchartdemo" click.call="mobileMenuActive = false">&#9679;BarChart</a>
         </div>
 
         <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activeMenuId"

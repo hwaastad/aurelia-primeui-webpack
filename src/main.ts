@@ -16,6 +16,7 @@ import 'fullcalendar/dist/fullcalendar.css';
 //import 'jquery';
 //import 'primeui';
 
+
 bootstrap((aurelia: Aurelia): void => {
   aurelia.use
   .standardConfiguration()

@@ -1,13 +1,20 @@
 import {autoinject, customElement, bindable,child} from 'aurelia-framework';
+import 'amcharts';
+import 'amcharts.serial';
+import 'amcharts.export';
 
 @customElement('am-barchart')
 @autoinject
 export class AmBarChartComponent {
   @bindable dataProvider;
   @bindable innerRadius;
-  @bindable depth;
-  @bindable angle;
+  @bindable categoryField:string;
+  @bindable valueField:string;
+  @bindable title:string;
+  @bindable depth:number=20;
+  @bindable angle:number=30;
   @bindable export:boolean = false;
+  @bindable onClick;
   chart;
   @child('div') child;
 
@@ -16,15 +23,44 @@ export class AmBarChartComponent {
   }
 
   attached() {
-    this.createPieChart();
+    this.createBarChart();
   }
 
-  createPieChart() {
-    this.chart = new AmCharts.AmPieChart();
+  createBarChart() {
+    this.chart = new AmCharts.AmSerialChart();
     this.chart.export={enabled:this.export};
     this.chart.dataProvider = this.dataProvider;
-    this.chart.valueField = "litres";
-    this.chart.titleField = "country";
+    this.chart.categoryField = this.categoryField;
+    this.chart.type='serial';
+    this.chart.startDuration=2;
+    this.chart.graphs=[{
+      "balloonText": "[[category]]: <b>[[value]]</b>",
+      "fillColorsField": "color",
+      "fillAlphas": 1,
+      "lineAlpha": 0.1,
+      "type": "column",
+      "valueField": this.valueField
+    }];
+    this.chart.valueAxes=[{
+      "position": "left",
+      "title": this.title
+    }];
+    this.chart.categoryAxis={
+      "gridPosition": "start",
+      "labelRotation": 90
+    };
+    this.chart.chartCursor={
+      "categoryBalloonEnabled": false,
+      "cursorAlpha": 0,
+      "zoomable": false
+    };
+    this.chart.depth3D=this.depth;
+    this.chart.angle=this.angle;
+    this.chart.addListener("clickGraphItem",e => {
+      if(this.onClick){
+        this.onClick({originalEvent:event, chart: e.item});
+      }
+    });
     this.chart.write(this.child);
   }
 
@@ -39,13 +75,6 @@ export class AmBarChartComponent {
     var value = Number(newValue);
     this.chart.startDuration = 0;
     this.chart['angle'] = value;
-    this.chart.validateNow();
-  }
-
-  innerRadiusChanged(newValue, oldValue) {
-    let value = newValue;
-    this.chart.startDuration = 0;
-    this.chart['innerRadius'] = value += "%";
     this.chart.validateNow();
   }
 }
