@@ -3,6 +3,7 @@
   "version": false,
   "dependencies": {},
   "ambientDependencies": {
+    "amcharts": "registry:dt/amcharts#0.0.0+20160417152203",
     "chart": "registry:dt/chart#0.0.0+20160316155526",
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
     "jquery": "registry:dt/jquery#1.10.0+20160316155526",

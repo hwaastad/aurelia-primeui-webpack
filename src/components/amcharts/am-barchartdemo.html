@@ -1,0 +1,18 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">AmCharts BarChart</span>
+      <span class="defaultText dispTable">A bar chart or bar graph is a chart that presents Grouped data with rectangular bars with lengths proportional to the values that they represent.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-growl value.bind="msgs"></p-growl>
+
+    <h3 class="first">Basic</h3>
+    <am-barchart data-provider.bind="chartData" export.bind="true"></am-barchart>
+  </div>
+
+  <div class="ContentSideSections Source">
+  </div>
+</template>

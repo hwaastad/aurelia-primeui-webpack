@@ -65,6 +65,7 @@ export class AppRouterConfig {
         { route: 'polarareachartdemo',  name: 'polarareachartdemo', moduleId: './components/charts/polarareachartdemo',  nav: true, title:'polarareachartdemo' },
         { route: 'radarchartdemo',  name: 'radarchartdemo', moduleId: './components/charts/radarchartdemo',  nav: true, title:'radarchartdemo' },
 
+        { route: 'ambarchartdemo',  name: 'ambarchartdemo', moduleId: './components/amcharts/am-barchartdemo',  nav: true, title:'ambarchartdemo' },
 
 
 

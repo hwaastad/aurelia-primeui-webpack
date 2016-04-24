@@ -1,3 +1,4 @@
+/// <reference path="browser/ambient/amcharts/index.d.ts" />
 /// <reference path="browser/ambient/chart/index.d.ts" />
 /// <reference path="browser/ambient/es6-shim/index.d.ts" />
 /// <reference path="browser/ambient/jquery/index.d.ts" />

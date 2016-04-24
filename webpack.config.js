@@ -10,6 +10,9 @@ var node_dir=__dirname + '/node_modules';
 module.exports = {
   resolve: {
     moduleDirectories: ['node_modules'],
+    alias: {
+      amcharts: 'amcharts/dist/amcharts/amcharts.js'
+    },
   /*  alias: {
       primeui:'primeui/primeui-ng-all.js',
       'prime-css': node_dir + '/primeui'

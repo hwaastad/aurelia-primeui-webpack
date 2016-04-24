@@ -92,6 +92,11 @@
           <a class="SubMenuLink" href="#radarchartdemo" click.call="mobileMenuActive = false">&#9679; Radar</a>
         </div>
 
+        <span id="am_chart" ref="chartmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="chartmenutitle.id == activeMenuId" click.trigger="activeMenuId = amchartmenutitle.id"><img src="resources/images/mono/charts.svg" /><img class="hiddenIcons" src="resources/images/mono/chartsBlue.svg" /><span class="MainLinkText">AmCharts</span></span>
+        <div class="SubMenuLinkContainer ${(amchartmenutitle.id == activeMenuId) ? 'submenushow':'submenuhide'}">
+          <a class="SubMenuLink" href="#ambarchartdemo" click.call="mobileMenuActive = false">&#9679; BarChart</a>
+        </div>
+
         <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activeMenuId"
         click.trigger="activeMenuId = messagesmenutitle.id"><img src="resources/images/mono/message.svg">
         <img class="hiddenIcons" src="resources/images/mono/messageBlue.svg">
