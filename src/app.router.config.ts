@@ -67,11 +67,9 @@ export class AppRouterConfig {
 
         { route: 'ampiechartdemo',  name: 'ampiechartdemo', moduleId: './components/amcharts/am-piechartdemo',  nav: true, title:'ampiechartdemo' },
         { route: 'ambarchartdemo',  name: 'ambarchartdemo', moduleId: './components/amcharts/am-barchartdemo',  nav: true, title:'ambarchartdemo' },
+        { route: 'amdonutdemo',  name: 'amdonutdemo', moduleId: './components/amcharts/am-amdonutdemo',  nav: true, title:'amdonutdemo' },
 
-
-
-
-
+      
 
       ]);
       return config;

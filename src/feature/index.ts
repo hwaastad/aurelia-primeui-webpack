@@ -60,5 +60,5 @@ export function configure(frameworkConfig, configCallback) {
 
   frameworkConfig.globalResources('./amcharts/piechart/am-piechart');
   frameworkConfig.globalResources('./amcharts/barchart/am-barchart');
-
+  frameworkConfig.globalResources('./amcharts/donut/am-donut');
 }
