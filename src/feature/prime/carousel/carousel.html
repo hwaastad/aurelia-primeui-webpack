@@ -1,9 +1,24 @@
 <template>
-  <div class="ui-carousel ui-widget-content ui-corner-all">
-    <div class="ui-carousel-viewport">
-      <ul>
-        <template replaceable part="item-template"/>
-      </ul>
+  <div class="ui-carousel ui-widget ui-widget-content ui-corner-all ${styleClass}" style.bind="style">
+    <div class="ui-carousel-header ui-widget-header">
+      <div class="ui-carousel-header-title">${headerText}</div>
+      <span class="ui-carousel-button ui-carousel-next-button fa fa-arrow-circle-right ${(page === (totalPages-1)) && !circular ? 'ui-state-disabled':''}" click.delegate="onNextNav()"</span>
+        <span class="ui-carousel-button ui-carousel-prev-button fa fa-arrow-circle-left ${(page === 0 && !circular) ? 'ui-state-disabled':''}" click.delegate="onPrevNav()"</span>
+          <div if.bind="displayPageLinks" class="ui-carousel-page-links">
+            <a href="#"  repeat.for="links of anchorPageLinks" class="ui-carousel-page-link fa fa-circle-o ${page === $index ? 'fa-dot-circle-o':''}"></a>
+          </div>
+          <select if.bind="displayPageDropdown" class="ui-carousel-dropdown ui-widget ui-state-default ui-corner-left" value.bind="page" change.delegate="onDropdownChange($event.target.value)">
+            <option repeat.for="option of selectDropdownOptions" value.bind="option" selected.bind="value == option">${option+1}</option>
+          </select>
+          <select if.bind="responsive" class="ui-carousel-mobiledropdown ui-widget ui-state-default ui-corner-left" value.bind="page" change.delegate="onDropdownChange($event.target.value)"
+          css="display: ${shrinked ? 'block' : 'none'}">
+          <option repeat.for="option of mobileDropdownOptions" value.bind="option" selected.bind="value == option">${option+1}</option>
+        </select>
+      </div>
+      <div class="ui-carousel-viewport">
+        <ul class="ui-carousel-items" css="left:${left}px; transitionProperty:'left'; transitionDuration:${effectDuration}; transitionTimingFunction:${easing}">
+          <template replaceable part="item-template"/>
+        </ul>
+      </div>
     </div>
-  </div>
-</template>
+  </template>
