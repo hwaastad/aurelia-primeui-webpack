@@ -23,7 +23,7 @@
 
   <p-carousel header-text="Cars" value.bind="cars" responsive.bind="true">
     <template replace-part="item-template">
-      <li repeat.for="car of cars">
+      <li repeat.for="car of cars" class="ui-carousel-item ui-widget-content ui-corner-all">
         <div class="ui-grid ui-grid-responsive">
           <div class="ui-grid-row">
             <div class="ui-grid-col-12"><img src="resources/demo/images/car/${car.brand}.gif" /></div>
@@ -42,7 +42,7 @@
           </div>
           <div class="ui-grid-row">
             <div class="ui-grid-col-12">
-              <button type="button" p-button="icon:fa-search" click.delegate="selectCar(car)"></button>
+              <button type="button" p-button="icon: fa fa-search" click.delegate="selectCar(car)"></button>
             </div>
           </div>
         </div>

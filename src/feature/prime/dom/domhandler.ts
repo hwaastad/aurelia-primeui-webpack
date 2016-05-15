@@ -23,6 +23,27 @@ export class DomHandler {
     }
   }
 
+  public width(el) {
+    let width = el.offsetWidth;
+    let style = getComputedStyle(el);
+
+    width -= parseInt(style.paddingLeft) + parseInt(style.paddingRight);
+    return width;
+  }
+
+  public getHorizontalMargin(el) {
+    let style = getComputedStyle(el);
+    return parseInt(style.marginLeft) + parseInt(style.marginRight);
+  }
+
+  public innerWidth(el) {
+    let width = el.offsetWidth;
+    let style = getComputedStyle(el);
+
+    width += parseInt(style.paddingLeft) + parseInt(style.paddingRight);
+    return width;
+  }
+
   public removeClass(element: any, className: string):void {
     if (element.classList)
     element.classList.remove(className);
