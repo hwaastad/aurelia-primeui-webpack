@@ -2,7 +2,7 @@
   <div class="ui-carousel ui-widget ui-widget-content ui-corner-all ${styleClass}" style.bind="style">
     <div class="ui-carousel-header ui-widget-header">
       <div class="ui-carousel-header-title">${headerText}</div>
-      <span class="ui-carousel-button ui-carousel-next-button fa fa-arrow-circle-right ${(page === (totalPages-1)) && !circular ? 'ui-state-disabled':''}" click.delegate="onNextNav()"</span>
+      <span class="ui-carousel-button ui-carousel-next-button fa fa-arrow-circle-right ${(page === (totalPages-1)) && !circular ? 'ui-state-disabled':''}" click.delegate="onNextNav()"></span>
         <span class="ui-carousel-button ui-carousel-prev-button fa fa-arrow-circle-left ${(page === 0 && !circular) ? 'ui-state-disabled':''}" click.delegate="onPrevNav()"</span>
           <div if.bind="displayPageLinks" class="ui-carousel-page-links">
             <a href="#"  repeat.for="links of anchorPageLinks" class="ui-carousel-page-link fa fa-circle-o ${page === $index ? 'fa-dot-circle-o':''}"></a>
@@ -16,7 +16,7 @@
         </select>
       </div>
       <div class="ui-carousel-viewport">
-        <ul class="ui-carousel-items" css="left:${left}px; transitionProperty:'left'; transitionDuration:${effectDuration}; transitionTimingFunction:${easing}">
+        <ul class="ui-carousel-items" css="left:${left}px; transition-property:left; transition-duration: ${effectDuration}; transition-timing-function: ${easing}">
           <template replaceable part="item-template"/>
         </ul>
       </div>

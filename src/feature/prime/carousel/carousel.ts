@@ -1,4 +1,4 @@
-import {bindable,autoinject,customElement} from 'aurelia-framework';
+import {bindable,autoinject,customElement,computedFrom} from 'aurelia-framework';
 import {DomHandler} from '../dom/domhandler';
 @customElement('p-carousel')
 @autoinject
@@ -10,7 +10,8 @@ export class CarouselComponent {
   @bindable circular: boolean=false;
   @bindable breakpoint: number=560;
   @bindable responsive: boolean=undefined;
-  @bindable autoplayInterval: number=0;;
+  @bindable autoplayInterval: number=0;
+  @bindable effectDuration: any = '1s';
   @bindable easing: string = 'ease-out';
   @bindable pageLinks: number = 3;
   @bindable style: any;
@@ -41,6 +42,13 @@ export class CarouselComponent {
       this.columns = this.numVisible;
     }
     this.page = Math.floor(this.firstVisible / this.columns);
+
+    this.documentResponsiveListener = e => {
+      this.updateState();
+      this.updateMobileDropdown();
+      this.updateLinks();
+      this.updateDropdown();
+    }
   }
 
   bind(){
@@ -52,15 +60,14 @@ export class CarouselComponent {
     this.viewport = this.domHandler.findSingle(this.element, 'div.ui-carousel-viewport');
     this.itemsContainer = this.domHandler.findSingle(this.element, 'ul.ui-carousel-items');
 
-  /*  if(this.responsive) {
-      this.documentResponsiveListener = this.renderer.listenGlobal('window', 'resize', (event) => {
-        this.updateState();
-      });
-    }*/
+    if(this.responsive) {
+      window.addEventListener('resize',this.documentResponsiveListener);
+    }
 
     if(this.value && this.value.length) {
-      //this.render();
+      this.render();
     }
+    this.updateState();
   }
 
   updateLinks() {
@@ -135,14 +142,17 @@ export class CarouselComponent {
     this.setPage(parseInt(val));
   }
 
+  @computedFrom('totalPages','pageLinks','shrinked')
   get displayPageLinks(): boolean {
     return (this.totalPages <= this.pageLinks && !this.shrinked);
   }
 
+  @computedFrom('totalPages','pageLinks','shrinked')
   get displayPageDropdown(): boolean {
     return (this.totalPages > this.pageLinks && !this.shrinked);
   }
 
+  @computedFrom('value','columns')
   get totalPages(): number {
     return (this.value && this.value.length) ? Math.ceil(this.value.length / this.columns) : 0;
   }
@@ -188,7 +198,7 @@ export class CarouselComponent {
 
   detached() {
     if(this.responsive) {
-      this.documentResponsiveListener();
+      window.removeEventListener('resize',this.documentResponsiveListener);
     }
 
     if(this.autoplayInterval) {
