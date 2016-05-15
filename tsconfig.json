@@ -89,6 +89,7 @@
     "./src/feature/prime/accordion/accordion.ts",
     "./src/feature/prime/accordion/accordiontab.ts",
     "./src/feature/prime/api/lazyload.ts",
+    "./src/feature/prime/api/menumodel.ts",
     "./src/feature/prime/api/message.ts",
     "./src/feature/prime/api/selectitem.ts",
     "./src/feature/prime/api/sortmeta.ts",

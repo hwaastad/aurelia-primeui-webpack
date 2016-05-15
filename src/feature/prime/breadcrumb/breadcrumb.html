@@ -1,5 +1,15 @@
 <template>
-  <div tyle.bind="style" class="ui-breadcrumb ui-widget ui-widget-header ui-helper-clearfix ui-corner-all ${styleClass}">
-    <content></content>
+  <div style="style" class="ui-breadcrumb ui-widget ui-widget-header ui-helper-clearfix ui-corner-all ${styleClass}">
+    <ul>
+      <li class="fa fa-home"></li>
+      <div repeat.for="item of model">
+        <li role="menuitem">
+          <a href.bind="item.url||'#'" class="ui-menuitem-link" click.delegate="itemClick($event, item)">
+            <span class="ui-menuitem-text">${item.label}</span>
+          </a>
+        </li>
+        <li class="ui-breadcrumb-chevron fa fa-chevron-right" if.bind="!$last"></li>
+      </div>
+    </ul>
   </div>
 </template>

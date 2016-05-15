@@ -1,37 +1,20 @@
 import {bindable,autoinject,customElement,LogManager} from 'aurelia-framework';
 import {DomHandler} from '../dom/domhandler';
+import {MenuItem} from '../api/menumodel';
 
 @customElement('p-breadcrumb')
 @autoinject
 export class BreadCrumbComponent {
   @bindable style: string;
   @bindable styleClass: string;
+  @bindable model: MenuItem[];
 
-  initialized: boolean;
-  menuElement: any;
+  constructor(private element:Element){}
 
-  constructor(private element:Element){
-    this.initialized=false;
-  }
-
-  attached(){
-    this.menuElement = jQuery(this.element).find('> div > ul');
-    this.menuElement.puibreadcrumb({
-      enhanced: true
-    });
-    this.initialized = true;
-  }
-
-  propertyChanged(property,newVal,oldVal){
-    if (this.initialized) {
-      this.menuElement.puibreadcrumb('option', property,newVal);
+  itemClick(event, item: MenuItem) {
+    if(item.eventEmitter){
+      item.eventEmitter(event);
     }
-  }
-
-  detached(){
-    this.menuElement.puibreadcrumb('destroy');
-    this.initialized = false;
-    this.menuElement = null;
   }
 
 }
